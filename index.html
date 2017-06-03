@@ -15,34 +15,21 @@
     <body class="container-fluid">
 
 
-        <!-- Starts the nav bar -->
-        <nav class="navbar navbar-inverse" role="navigation">
-          <div class="container-fluid nav-container">
-
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-              <a class="navbar-brand" href="#">Simply GPA</a>
-            </div>
-
-            <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li class="signup-menu-item"><a href="#signup-modal" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
-                <li class="signin-menu-item"><a href="#signin-modal" data-toggle="modal" data-target="#signin-modal">Sign In</a></li>
-                <li class="change-password-menu-item"><a href="#changepassword-modal" data-toggle="modal" data-target="#changepassword-modal">Change Password</a></li>
-                <li class="signout-menu-item"><a href="#">Sign Out</a></li>
-              </ul>
-            </li>
-          </ul>
-
-          </div> <!-- End Container-Fluid -->
-        </nav>
+      <!-- Starts the nav bar -->
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid nav-container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-brand" href="#">Simply GPA</a>
+          </div>
+        </div>
+      <!-- end of DIV container -->
+      </nav>
 
       <div class="giant-container">
 
@@ -55,6 +42,13 @@
         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
         cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
         est laborum.</p>
+
+        <form id="sign-up-form">
+          <input type="email" name="credentials[email]" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+          <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+          <input type="password" name="credentials[password_confirmation]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+          <button type="submit" class="btn btn-primary btn-block">Sign-Up</button>
+        </form>
 
       </div> <!-- End Giant Container -->
     </body>

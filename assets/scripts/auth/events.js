@@ -4,6 +4,11 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
+const setUpApp = function () {
+  $('').show()
+  $('#sign-out, #changepassword-form, #sign-up-form').hide()
+}
+
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
@@ -19,7 +24,9 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
-  $('#signin-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
+  $('#sign-out, #changepassword-form').show()
+  $('#sign-in-form, #sign-up-form').hide()
 }
 
 const onChangePassword = function (event) {
@@ -36,6 +43,8 @@ const onSignOut = function (event) {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
+  $('#sign-in-form').show()
+  $('#sign-out, #changepassword-form, #sign-up-form').hide()
 }
 
 const addHandlers = () => {
@@ -46,5 +55,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  setUpApp
 }

@@ -18,5 +18,6 @@ const courseEvents = require('./courses/events.js')
 
 $(() => {
   authEvents.addHandlers()
+  authEvents.setUpApp()
   courseEvents.addHandlers()
 })

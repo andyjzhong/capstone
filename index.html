@@ -137,11 +137,15 @@
         <!-- Start of Course Creation Form -->
         <div class="col-xs-4">
           <form id="create-course-form">
-            <input type="email" name="credentials" class="form-control" placeholder="Email address" required>
-            <input type="password" name="credentials" class="form-control" placeholder="Password" required>
-            <input type="password" name="credentials" class="form-control" placeholder="Password" required>
-            <input type="password" name="credentials" class="form-control" placeholder="Password" required>
-            <button type="submit" class="btn btn-primary btn-block">Create Course</button>
+            <input type="text" class="form-control" name="course[title]" placeholder="Course Title" required>
+            <input type="text" class="form-control" name="course[semester]" placeholder="Semester" required>
+            <input type="text" class="form-control" name="course[grade]" placeholder="Grade" required>
+            <input type="text" class="form-control" name="course[credits]" placeholder="Credits" required>
+            <!-- <input type="text" name="credentials" class="form-control" placeholder="Email address" required>
+            <input type="text" name="credentials" class="form-control" placeholder="Password" required>
+            <input type="text" name="credentials" class="form-control" placeholder="Password" required>
+            <input type="text" name="credentials" class="form-control" placeholder="Password" required> -->
+            <button type="submit" class="btn btn-warning btn-block">Create Course</button>
           </form>
         </div>
         <!-- End of Course Creation Form -->

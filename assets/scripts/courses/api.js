@@ -26,7 +26,7 @@ const showCourse = (id) => {
 }
 
 const createCourse = (data) => {
-  // console.log('ajax data is', data)
+  console.log('ajax data is', data)
   return $.ajax({
     url: config.apiOrigin + '/courses',
     method: 'POST',

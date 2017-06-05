@@ -14,7 +14,6 @@
     </head>
     <body class="container-fluid">
 
-
     <!-- AZ: Navbar Component -->
     <nav class="navbar navbar-inverse" role="navigation">
       <div class="container-fluid nav-container">
@@ -33,105 +32,95 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
               <!-- AZ: List of Auth Dropdown -->
-              <ul class="dropdown-menu">
-                <li>
+            <ul class="dropdown-menu">
+              <li>
 
-                  <!-- AZ: Container for Sign In -->
-                  <div class="row sign-in">
-                    <div class="col-md-12 text-center">
-                      <!-- AZ: Form for Sign In -->
-                      <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-in-form">
-                        <div class="form-group">
-                          <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                          <input type="email" name="credentials[email]" class="form-control" id="inputEmail" placeholder="Email address" required>
-                        </div> <!-- AZ: End Sign In: E-mail -->
-                        <div class="form-group">
-                          <label class="sr-only" for="exampleInputPassword2">Password</label>
-                          <input type="password" name="credentials[password]" class="form-control" id="inputPassword" placeholder="Password" required>
-                        </div> <!-- AZ: End Sign In: Password -->
-                        <div class="form-group">
-                          <button type="submit" class="btn btn-primary btn-block">Sign-In</button>
-                        </div> <!-- AZ: End Sign In: Submit -->
-                      </form> <!-- AZ: End Sign In Form -->
-                      <a href="#" class="linkSignUp"><b>Create an Account</b></a>
-                    </div>
+                <!-- AZ: Container for Sign In -->
+                <div class="row sign-in">
+                  <div class="col-md-12 text-center">
+                    <!-- AZ: Form for Sign In -->
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-in-form">
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                        <input type="email" name="credentials[email]" class="form-control" id="inputEmail" placeholder="Email address" required>
+                      </div> <!-- AZ: End Sign In: E-mail -->
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                        <input type="password" name="credentials[password]" class="form-control" id="inputPassword" placeholder="Password" required>
+                      </div> <!-- AZ: End Sign In: Password -->
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Sign-In</button>
+                      </div> <!-- AZ: End Sign In: Submit -->
+                    </form> <!-- AZ: End Sign In Form -->
+                    <a href="#" class="linkSignUp"><b>Create an Account</b></a>
                   </div>
-                  <!-- AZ: End of Sign In Container -->
+                </div>
+                <!-- AZ: End of Sign In Container -->
 
-                  <!-- AZ: Container for Sign Up -->
-                  <div class="row sign-up">
-                    <div class="col-md-12">
-                      <!-- AZ: Form for Sign Up -->
-                      <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-up-form">
-                        <div class="form-group">
-                          <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                          <input type="email" name="credentials[email]" class="form-control" id="inputEmail2" placeholder="Email address" required>
-                        </div> <!-- AZ: End Sign Up: E-mail -->
-                        <div class="form-group">
-                          <label class="sr-only" for="exampleInputPassword2">Password</label>
-                          <input type="password" name="credentials[password]" class="form-control" id="inputPassword2" placeholder="Password" required>
-                        </div> <!-- AZ: End Sign Up: Password -->
-                        <div class="form-group">
-                          <label class="sr-only" for="exampleInputPassword2">Confirm Password</label>
-                          <input type="password" name="credentials[password_confirmation]" class="form-control" id="inputPassword2" placeholder="Password" required>
-                        </div> <!-- AZ: End Sign Up: Confirm Password -->
-                        <div class="form-group">
-                          <button type="submit" class="btn btn-primary btn-block">Sign-Up</button>
-                        </div> <!-- AZ: End Sign Up: Submit -->
-                      </form>
-                    </div>
+                <!-- AZ: Container for Sign Up -->
+                <div class="row sign-up">
+                  <div class="col-md-12">
+                    <!-- AZ: Form for Sign Up -->
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-up-form">
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                        <input type="email" name="credentials[email]" class="form-control" id="inputEmail2" placeholder="Email address" required>
+                      </div> <!-- AZ: End Sign Up: E-mail -->
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                        <input type="password" name="credentials[password]" class="form-control" id="inputPassword2" placeholder="Password" required>
+                      </div> <!-- AZ: End Sign Up: Password -->
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Confirm Password</label>
+                        <input type="password" name="credentials[password_confirmation]" class="form-control" id="inputPassword2" placeholder="Password" required>
+                      </div> <!-- AZ: End Sign Up: Confirm Password -->
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Sign-Up</button>
+                      </div> <!-- AZ: End Sign Up: Submit -->
+                    </form>
                   </div>
-                  <!-- AZ: End of Sign Up Container -->
+                </div>
+                <!-- AZ: End of Sign Up Container -->
 
-                  <!-- AZ: Container for Change Password -->
-                  <div class="row change-password">
-                    <div class="col-md-12">
-                      <!-- AZ: Form for Change Password -->
-                      <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="changepassword-form">
-                        <div class="form-group">
-                          <label class="sr-only" for="exampleInputPassword2">Old Password</label>
-                          <input type="password" name="passwords[old]" class="form-control" id="inputPassword3" placeholder="Password" required>
-                        </div> <!-- AZ: End Change Password: Old -->
-                        <div class="form-group">
-                          <label class="sr-only" for="exampleInputPassword2">New Password</label>
-                          <input type="password" name="passwords[new]" class="form-control" id="inputPassword3" placeholder="Password" required>
-                        </div> <!-- AZ: End Change Password: New -->
-                        <div class="form-group">
-                          <button type="submit" class="btn btn-primary btn-block">Change Password</button>
-                        </div> <!-- AZ: End Change Password: Submit -->
-                      </form>
-                    </div>
+                <!-- AZ: Container for Change Password -->
+                <div class="row change-password">
+                  <div class="col-md-12">
+                    <!-- AZ: Form for Change Password -->
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="changepassword-form">
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Old Password</label>
+                        <input type="password" name="passwords[old]" class="form-control" id="inputPassword3" placeholder="Password" required>
+                      </div> <!-- AZ: End Change Password: Old -->
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">New Password</label>
+                        <input type="password" name="passwords[new]" class="form-control" id="inputPassword3" placeholder="Password" required>
+                      </div> <!-- AZ: End Change Password: New -->
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Change Password</button>
+                      </div> <!-- AZ: End Change Password: Submit -->
+                    </form>
                   </div>
-                  <!-- AZ: End of Change Password Container -->
+                </div>
+                <!-- AZ: End of Change Password Container -->
 
-                  <!-- AZ: Container for Sign Out -->
-                  <div class="row sign-out">
-                    <div class="col-md-12">
-                      <!-- AZ: Form for Sign Out -->
-                      <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-out">
-                        <button type="submit" class="btn btn-primary btn-block">Sign Out</button>
-                      </form>
-                    </div>
+                <!-- AZ: Container for Sign Out -->
+                <div class="row sign-out">
+                  <div class="col-md-12">
+                    <!-- AZ: Form for Sign Out -->
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-out">
+                      <button type="submit" class="btn btn-primary btn-block">Sign Out</button>
+                    </form>
                   </div>
-                  <!-- AZ: End of Sign Out Container -->
+                </div>
+                <!-- AZ: End of Sign Out Container -->
 
-
-
-
-
-
-
-
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <!-- AZ: End of Sign Out Container@@@@@@@@@ -->
-        </div>
-      </div>
-      <!-- AZ: End of Sign Out Container@@@@@@ -->
+              </li>
+            </ul> <!-- AZ: End of Auth Dropdown Selection -->
+          </li>
+        </ul> <!-- AZ: End of Dropdown Container -->
+      </div> <!-- AZ: End of Nav Container -->
     </nav>
-    <!-- AZ: End of Sign Out Container@@@@@@@@ -->
+    <!-- AZ: End of Navbar Component -->
 
       <div class="giant-container">
 
@@ -146,21 +135,22 @@
         est laborum.</p>
 
         <div class="col-xs-4">
-          <form id="sign-up-form">
-            <input type="email" name="credentials[email]" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-            <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-            <input type="password" name="credentials[password_confirmation]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-            <button type="submit" class="btn btn-primary btn-block">Sign-Up</button>
+          <form id="create-course-form">
+            <input type="email" name="credentials" class="form-control" placeholder="Email address" required>
+            <input type="password" name="credentials" class="form-control" placeholder="Password" required>
+            <input type="password" name="credentials" class="form-control" placeholder="Password" required>
+            <input type="password" name="credentials" class="form-control" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary btn-block">Create Course</button>
           </form>
         </div>
 
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
+              <th>Course</th>
+              <th>Semester</th>
+              <th>Grade</th>
+              <th>Credits</th>
             </tr>
           </thead>
           <tbody>
@@ -179,7 +169,15 @@
             <tr>
               <th scope="row">3</th>
               <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
+
+              <td>
+              </td>
+
+
+
+
+
+
             </tr>
           </tbody>
         </table>

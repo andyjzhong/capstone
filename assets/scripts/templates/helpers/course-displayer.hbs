@@ -2,3 +2,30 @@ Stuff is below!
 {{#each courses as |course|}}
   {{course.title}}
 {{/each}}
+
+{{!-- Start of Course Table --}}
+<div id="course-table">
+  <table class="table table-hover">
+    <thead> {{!-- Start Table Headers --}}
+      <tr>
+        <th>#</th>
+        <th>Course</th>
+        <th>Semester</th>
+        <th>Grade</th>
+        <th>Credits</th>
+      </tr>
+    </thead> {{!-- End Table Headers --}}
+    <tbody> {{!-- Start Table Body --}}
+      {{#each courses as |course|}}
+      <tr>
+        <th scope="row">1</th>
+        <td>{{course.title}}</td>
+        <td>{{course.semester}}</td>
+        <td>{{course.grade}}</td>
+        <td>{{course.credits}}</td>
+      </tr>
+      {{/each}}
+    </tbody> {{!-- End Table Body --}}
+  </table>
+</div>
+{{!-- End of Course Table --}}

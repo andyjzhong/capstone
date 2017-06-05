@@ -1,5 +1,6 @@
 * {
   font-family: 'Lato', sans-serif;
+  text-transform: capitalize;
   border-radius: 0 !important;
 }
 
@@ -10,6 +11,17 @@
 .giant-container, .nav-container {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.navbar {
+  background-color: white;
+  color: black;
+  border-style: none;
+  border-bottom: solid 1px black;
+}
+
+.navbar-brand {
+  margin: 0 auto;
 }
 
 html {

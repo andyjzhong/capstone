@@ -133,6 +133,7 @@
         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
         cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
         est laborum.</p>
+        <br>
 
         <!-- Start of Course Creation Form -->
         <div class="col-xs-4">
@@ -148,47 +149,48 @@
             <button type="submit" class="btn btn-warning btn-block">Create Course</button>
           </form>
         </div>
+        <br>
         <!-- End of Course Creation Form -->
 
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Course</th>
-              <th>Semester</th>
-              <th>Grade</th>
-              <th>Credits</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
+        <!-- Start of the Table -->
+        <div id="course-listing">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Semester</th>
+                <th>Grade</th>
+                <th>Credits</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <!-- End of the Table -->
 
-              <td>
-              </td>
+      <!-- Handlebars to show all courses -->
 
-
-
-
-
-
-            </tr>
-          </tbody>
-        </table>
-
-
+      <button id="indexButton" class="btn-sm btn-success form-control" type="click">Index Courses</button>
+      <div id="handlebars-content"></div>
+      <p>Things should show up here^</p>
 
 
       </div> <!-- End Giant Container -->

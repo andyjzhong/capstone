@@ -4,12 +4,13 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
-// const onIndexCourses = function () {
-//   event.preventDefault()
-//   api.indexCourses()
-//     .then()
-//     .catch()
-// }
+const onIndexCourses = function () {
+  console.log('onIndexCourse from Events.js Ran')
+  event.preventDefault()
+  api.indexCourses()
+    .then(ui.indexCourseSuccess)
+    .catch(ui.actionFailure)
+}
 
 // const onShowCourse = function () {
 //   event.preventDefault()
@@ -19,12 +20,11 @@ const ui = require('./ui')
 // }
 
 const onCreateCourse = function (event) {
-  console.log('onCreateCourse from Events.js Ran')
   const data = getFormFields(this)
   event.preventDefault()
   api.createCourse(data)
     .then(ui.createCourseSuccess)
-    .catch(ui.createCourseFailure)
+    .catch(ui.actionFailure)
 }
 
 // const onUpdateCourse = function () {
@@ -43,6 +43,7 @@ const onCreateCourse = function (event) {
 
 const addHandlers = () => {
   $('#create-course-form').on('submit', onCreateCourse)
+  $('#indexButton').on('click', onIndexCourses)
 }
 
 module.exports = {

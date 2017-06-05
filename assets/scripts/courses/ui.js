@@ -18,8 +18,13 @@ const indexCourseSuccess = function (data) {
   $('#handlebars-content').html(indexCoursesHtml)
 }
 
+const destroyCourseSuccess = function () {
+  console.log('Successfully destroyed Course.')
+}
+
 module.exports = {
   createCourseSuccess,
   indexCourseSuccess,
+  destroyCourseSuccess,
   actionFailure
 }

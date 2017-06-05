@@ -1,28 +1,33 @@
-Stuff is below!
+{{!-- Stuff is below!
 {{#each courses as |course|}}
   {{course.title}}
-{{/each}}
+{{/each}} --}}
 
 {{!-- Start of Course Table --}}
 <div id="course-table">
   <table class="table table-hover">
     <thead> {{!-- Start Table Headers --}}
       <tr>
-        <th>#</th>
+        <th>Id</th>
         <th>Course</th>
         <th>Semester</th>
         <th>Grade</th>
         <th>Credits</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
     </thead> {{!-- End Table Headers --}}
     <tbody> {{!-- Start Table Body --}}
       {{#each courses as |course|}}
       <tr>
-        <th scope="row">1</th>
+        {{!-- <th scope="row">1</th> --}}
+        <td>{{course.id}}</td>
         <td>{{course.title}}</td>
         <td>{{course.semester}}</td>
         <td>{{course.grade}}</td>
         <td>{{course.credits}}</td>
+        <td><button id="editButton" class="btn-sm btn-warning form-control" type="click">Edit</button></td>
+        <td><button class="btn-sm btn-danger form-control destroyButton" data-id="{{course.id}}" type="click">Delete</button></td>
       </tr>
       {{/each}}
     </tbody> {{!-- End Table Body --}}

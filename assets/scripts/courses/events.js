@@ -1,6 +1,7 @@
 'use strict'
 
 const getFormFields = require(`../../../lib/get-form-fields`)
+const courseStore = require('../courseStore')
 const api = require('./api')
 const ui = require('./ui')
 
@@ -34,16 +35,26 @@ const onCreateCourse = function (event) {
 //     .catch()
 // }
 
-// const onDestroyCourse = function () {
-//   event.preventDefault()
-//   api.destroyCourse()
-//     .then()
-//     .catch()
-// }
+const onDestroyCourse = function (event) {
+  event.preventDefault()
+  const id = courseStore.id
+  console.log(id)
+  api.destroyCourse(id)
+    .then(ui.destroyCourseSuccess)
+    .catch(ui.actionFailure)
+  courseStore.id = null
+  courseStore.templateType = null
+}
+
+const sayHi = function () {
+  alert('Hi')
+  console.log('Hi')
+}
 
 const addHandlers = () => {
   $('#create-course-form').on('submit', onCreateCourse)
   $('#indexButton').on('click', onIndexCourses)
+  $('.destroyButton').on('click', sayHi)
 }
 
 module.exports = {

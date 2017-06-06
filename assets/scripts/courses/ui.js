@@ -22,9 +22,14 @@ const destroyCourseSuccess = function () {
   console.log('Successfully destroyed Course.')
 }
 
+const updateCourseSuccess = function () {
+  console.log('Successfully updated Course.')
+}
+
 module.exports = {
   createCourseSuccess,
   indexCourseSuccess,
   destroyCourseSuccess,
+  updateCourseSuccess,
   actionFailure
 }

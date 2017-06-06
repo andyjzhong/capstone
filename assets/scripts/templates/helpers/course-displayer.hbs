@@ -1,6 +1,6 @@
 {{!-- Start of Course Table --}}
-<div id="course-table">
-  <table class="table table-hover">
+<div id="course-table" data-id="{{course.id}}">
+  <table data-id="{{course.id}}" class="table table-hover">
     <thead> {{!-- Start Table Headers --}}
       <tr>
         <th>Id</th>
@@ -12,27 +12,20 @@
         <th>Delete</th>
       </tr>
     </thead> {{!-- End Table Headers --}}
-    <tbody> {{!-- Start Table Body --}}
+    <tbody data-id="{{course.id}}"> {{!-- Start Table Body --}}
       {{#each courses as |course|}}
-      <tr contenteditable="true">
+      <tr data-id="{{course.id}}">
         {{!-- <th scope="row">1</th> --}}
-        <td>{{course.id}}</td>
-        <td>{{course.title}}</td>
-        <td>{{course.semester}}</td>
-        <td>{{course.grade}}</td>
-        <td>{{course.credits}}</td>
-        <td><button id="editButton" class="btn-sm btn-warning form-control" type="click">Edit</button></td>
-        <td><button class="btn-sm btn-danger form-control destroyButton" data-id="{{course.id}}" type="click">Delete</button></td>
+        <td data-id="{{course.id}}">{{course.id}}</td>
+        <td data-id="{{course.id}}" contenteditable="true">{{course.title}}</td>
+        <td data-id="{{course.id}}" contenteditable="true">{{course.semester}}</td>
+        <td data-id="{{course.id}}" contenteditable="true">{{course.grade}}</td>
+        <td data-id="{{course.id}}" contenteditable="true">{{course.credits}}</td>
+        <td data-id="{{course.id}}"><button data-id="{{course.id}}" class="btn-sm btn-warning form-control editButton" type="button">Edit</button></td>
+        <td data-id="{{course.id}}"><button data-id="{{course.id}}" class="btn-sm btn-danger form-control destroyButton" type="button">Delete</button></td>
       </tr>
       {{/each}}
     </tbody> {{!-- End Table Body --}}
   </table>
-
-  Did it work below?
-  <script language="javascript" type="text/javascript">
-    let sum = 0
-    return sum
-  </script>
-
 </div>
 {{!-- End of Course Table --}}

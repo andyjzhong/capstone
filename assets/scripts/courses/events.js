@@ -4,12 +4,17 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const courseStore = require('../courseStore')
 const api = require('./api')
 const ui = require('./ui')
+const submitEditButton = require('../templates/helpers/edit-course-buttons.hbs')
 
 const onIndexCourses = function () {
   console.log('onIndexCourse from Events.js Ran')
   event.preventDefault()
   api.indexCourses()
     .then(ui.indexCourseSuccess)
+    .then(() => {
+      $('.destroyButton').on('click', onDestroyCourse)
+      $('.editButton').on('click', onUpdateCourse)
+    })
     .catch(ui.actionFailure)
 }
 
@@ -28,16 +33,9 @@ const onCreateCourse = function (event) {
     .catch(ui.actionFailure)
 }
 
-// const onUpdateCourse = function () {
-//   event.preventDefault()
-//   api.updateCourse()
-//     .then()
-//     .catch()
-// }
-
 const onDestroyCourse = function (event) {
   event.preventDefault()
-  const id = courseStore.id
+  const id = $(this).attr('data-id')
   console.log(id)
   api.destroyCourse(id)
     .then(ui.destroyCourseSuccess)
@@ -46,15 +44,20 @@ const onDestroyCourse = function (event) {
   courseStore.templateType = null
 }
 
-const sayHi = function () {
-  alert('Hi')
-  console.log('Hi')
+const onUpdateCourse = function (event) {
+  console.log('onUpdateCourse from Events.js ran.')
+  // const id = $(this).attr('data-id')
+  // $('tr[data-id=' + id + ']').attr('contenteditable', 'true')
+  // const submitEdit = submitEditButton({})
+  // $('.blogpost-container[data-id=' + id + ']').append(submitEdit)
+  // $('#submit-edit').on('click', onSubmitEdit)
 }
 
 const addHandlers = () => {
   $('#create-course-form').on('submit', onCreateCourse)
   $('#indexButton').on('click', onIndexCourses)
-  $('.destroyButton').on('click', sayHi)
+  $('.destroyButton').on('click', onDestroyCourse)
+  $('.editButton').on('click', onUpdateCourse)
 }
 
 module.exports = {

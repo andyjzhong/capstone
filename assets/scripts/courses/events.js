@@ -18,14 +18,6 @@ const onIndexCourses = function () {
     .catch(ui.actionFailure)
 }
 
-const onCreateCourse = function (event) {
-  const data = getFormFields(this)
-  event.preventDefault()
-  api.createCourse(data)
-    .then(ui.createCourseSuccess)
-    .catch(ui.actionFailure)
-}
-
 const rerunIndex = function () {
   console.log('rerunIndex from Events.js Ran')
   api.indexCourses()
@@ -49,6 +41,15 @@ const onDestroyCourse = function (event) {
   courseStore.templateType = null
 }
 
+const onCreateCourse = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.createCourse(data)
+    .then(ui.createCourseSuccess)
+    .catch(ui.actionFailure)
+    .then(rerunIndex)
+}
+
 const onUpdateCourse = function (event) {
   console.log('onUpdateCourse from Events.js ran.')
   // const id = $(this).attr('data-id')
@@ -66,5 +67,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  rerunIndex
 }

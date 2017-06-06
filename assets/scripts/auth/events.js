@@ -6,7 +6,7 @@ const ui = require('./ui.js')
 
 const setUpApp = function () {
   $('').show()
-  $('#sign-out, #changepassword-form, #sign-up-form').hide()
+  $('#sign-out, #changepassword-form').hide()
 }
 
 const onSignUp = function (event) {

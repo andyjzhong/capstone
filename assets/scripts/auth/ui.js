@@ -2,6 +2,7 @@
 
 require('../index')
 const store = require('../store')
+const courseEvents = require('../courses/events.js')
 
 const signUpSuccess = (data) => {
   console.log('signUpSuccess ran and data is ', data)
@@ -14,6 +15,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   store.user = data.user
   console.log('sign in ran and data is ', data)
+  courseEvents.rerunIndex()
 }
 
 const signInFailure = (error) => {

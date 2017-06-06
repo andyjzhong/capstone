@@ -37,9 +37,9 @@ const createCourse = (data) => {
   })
 }
 
-const updateCourse = (data) => {
+const updateCourse = (id, data) => {
   return $.ajax({
-    url: config.apiOrigin + '/courses/' + courseStore.id,
+    url: config.apiOrigin + '/courses/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

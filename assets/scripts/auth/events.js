@@ -56,5 +56,6 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  setUpApp
+  setUpApp,
+  onSignIn
 }

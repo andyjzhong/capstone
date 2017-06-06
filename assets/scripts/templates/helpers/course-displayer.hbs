@@ -17,11 +17,14 @@
       <tr data-id="{{course.id}}">
         {{!-- <th scope="row">1</th> --}}
         <td data-id="{{course.id}}">{{course.id}}</td>
-        <td data-id="{{course.id}}" contenteditable="true">{{course.title}}</td>
-        <td data-id="{{course.id}}" contenteditable="true">{{course.semester}}</td>
-        <td data-id="{{course.id}}" contenteditable="true">{{course.grade}}</td>
-        <td data-id="{{course.id}}" contenteditable="true">{{course.credits}}</td>
-        <td data-id="{{course.id}}"><button data-id="{{course.id}}" class="btn-sm btn-warning form-control editButton" type="button">Edit</button></td>
+        <td data-id="{{course.id}}">{{course.title}}</td>
+        <td data-id="{{course.id}}">{{course.semester}}</td>
+        <td data-id="{{course.id}}">{{course.grade}}</td>
+        <td data-id="{{course.id}}">{{course.credits}}</td>
+        <td data-id="{{course.id}}">
+          <button data-id="{{course.id}}" class="btn-sm btn-primary form-control editButton" type="button">Edit</button>
+          <button data-id="{{course.id}}" class="btn-sm btn-warning form-control saveButton" type="button">Save</button>
+        </td>
         <td data-id="{{course.id}}"><button data-id="{{course.id}}" class="btn-sm btn-danger form-control destroyButton" type="button">Delete</button></td>
       </tr>
       {{/each}}

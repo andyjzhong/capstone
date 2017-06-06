@@ -3,7 +3,7 @@
   <table data-id="{{course.id}}" class="table table-hover">
     <thead> {{!-- Start Table Headers --}}
       <tr>
-        <th>Id</th>
+        {{!-- <th>Id</th> --}}
         <th>Course</th>
         <th>Semester</th>
         <th>Grade</th>
@@ -16,16 +16,19 @@
       {{#each courses as |course|}}
       <tr data-id="{{course.id}}">
         {{!-- <th scope="row">1</th> --}}
-        <td data-id="{{course.id}}">{{course.id}}</td>
-        <td data-id="{{course.id}}">{{course.title}}</td>
-        <td data-id="{{course.id}}">{{course.semester}}</td>
-        <td data-id="{{course.id}}">{{course.grade}}</td>
-        <td data-id="{{course.id}}">{{course.credits}}</td>
+        {{!-- <td data-id="{{course.id}}">{{course.id}}</td> --}}
+        <td class="C1" data-id="{{course.id}}">{{course.title}}</td>
+        <td class="C2" data-id="{{course.id}}">{{course.semester}}</td>
+        <td class="C3" data-id="{{course.id}}">{{course.grade}}</td>
+        <td class="C4" data-id="{{course.id}}">{{course.credits}}</td>
         <td data-id="{{course.id}}">
           <button data-id="{{course.id}}" class="btn-sm btn-primary form-control editButton" type="button">Edit</button>
           <button data-id="{{course.id}}" class="btn-sm btn-warning form-control saveButton" type="button">Save</button>
         </td>
-        <td data-id="{{course.id}}"><button data-id="{{course.id}}" class="btn-sm btn-danger form-control destroyButton" type="button">Delete</button></td>
+        <td data-id="{{course.id}}">
+          <button data-id="{{course.id}}" class="btn-sm btn-danger form-control destroyButton" type="button">Delete</button>
+          <button data-id="{{course.id}}" class="btn-sm btn-default form-control cancelButton" type="button">Cancel</button>
+        </td>
       </tr>
       {{/each}}
     </tbody> {{!-- End Table Body --}}

@@ -4,7 +4,6 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const courseStore = require('../courseStore')
 const api = require('./api')
 const ui = require('./ui')
-const submitEditButton = require('../templates/helpers/edit-course-buttons.hbs')
 
 const onIndexCourses = function () {
   console.log('onIndexCourse from Events.js Ran')
@@ -62,6 +61,15 @@ const onEditCourse = function (event) {
   $('tr[data-id=' + id + ']').css('border', '3px solid green')
   $('.submit-edit').on('click', onSaveCourse)
   $('.cancel-edit').on('click', onCancelCourse)
+  const thisEditButton = $(this)
+  const thisDestroyButton = $(this).parent().parent().find('td.C6')[0].firstElementChild
+  console.log('This Button is: ', thisEditButton)
+  console.log('This Button is: ', thisDestroyButton)
+  $(this).hide()
+  $(this.parent).hide()
+
+  // $('.saveButton, .cancelButton').show()
+  // $('.editButton, .destroyButton').hide()
 }
 
 // This function will ultimately be what actually fires the ajax call for updating this item.
@@ -89,7 +97,8 @@ const onSaveCourse = function (event) {
     .catch(ui.actionFailure)
   $('td[data-id=' + id + ']').attr('contenteditable', 'false')
   $('tr[data-id=' + id + ']').css('border', 'none')
-  $('.cancelButton, .saveButton').hide()
+  // $('.saveButton, .cancelButton').hide()
+  // $('.editButton, .destroyButton').show()
 }
 
 // This function reverts all fields back to being uneditable.
@@ -98,6 +107,8 @@ const onCancelCourse = function (event) {
   const id = $(this).attr('data-id')
   $('td[data-id=' + id + ']').attr('contenteditable', 'false')
   $('tr[data-id=' + id + ']').css('border', 'none')
+  // $('.saveButton, .cancelButton').hide()
+  // $('.editButton, .destroyButton').show()
 }
 
 const addHandlers = () => {

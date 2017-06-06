@@ -18,18 +18,22 @@ const onIndexCourses = function () {
     .catch(ui.actionFailure)
 }
 
-// const onShowCourse = function () {
-//   event.preventDefault()
-//   api.showCourse()
-//     .then()
-//     .catch()
-// }
-
 const onCreateCourse = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   api.createCourse(data)
     .then(ui.createCourseSuccess)
+    .catch(ui.actionFailure)
+}
+
+const rerunIndex = function () {
+  console.log('rerunIndex from Events.js Ran')
+  api.indexCourses()
+    .then(ui.indexCourseSuccess)
+    .then(() => {
+      $('.destroyButton').on('click', onDestroyCourse)
+      $('.editButton').on('click', onUpdateCourse)
+    })
     .catch(ui.actionFailure)
 }
 
@@ -40,6 +44,7 @@ const onDestroyCourse = function (event) {
   api.destroyCourse(id)
     .then(ui.destroyCourseSuccess)
     .catch(ui.actionFailure)
+    .then(rerunIndex)
   courseStore.id = null
   courseStore.templateType = null
 }

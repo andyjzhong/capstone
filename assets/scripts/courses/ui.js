@@ -23,7 +23,7 @@ const destroyCourseSuccess = function () {
 }
 
 const updateCourseSuccess = function () {
-  console.log('Successfully updated Course.')
+  console.log('Holy shit it worked!')
 }
 
 module.exports = {

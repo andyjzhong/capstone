@@ -2,7 +2,6 @@
 
 const config = require('../config')
 const store = require('../store')
-const courseStore = require('../courseStore')
 
 // Pulls pages for current user on authentication
 const indexCourses = () => {
@@ -37,7 +36,7 @@ const createCourse = (data) => {
   })
 }
 
-const updateCourse = (id, data) => {
+const updateCourse = (data, id) => {
   return $.ajax({
     url: config.apiOrigin + '/courses/' + id,
     method: 'PATCH',

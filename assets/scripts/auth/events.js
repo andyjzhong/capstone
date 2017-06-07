@@ -6,7 +6,7 @@ const ui = require('./ui.js')
 
 const setUpApp = function () {
   $('').show()
-  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form').hide()
+  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits').hide()
 }
 
 const onSignUp = function (event) {
@@ -26,7 +26,7 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
   $('#sign-in-form').trigger('reset')
   $('.giant-container, .footer, #sign-out, #changepassword-form').show()
-  $('#sign-in-form, #sign-up-form').hide()
+  $('#sign-in-form, #sign-up-form, #invalid-credits').hide()
 }
 
 const onChangePassword = function (event) {
@@ -44,7 +44,7 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
   $('#sign-in-form').show()
-  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form').hide()
+  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits').hide()
 }
 
 const linkSignUp = function () {

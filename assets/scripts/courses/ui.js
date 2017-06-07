@@ -1,6 +1,7 @@
 'use strict'
 
 const indexCoursesTemplate = require('../templates/helpers/course-displayer.hbs')
+// const courseEvents = require('./events')
 
 const actionFailure = function (error) {
   console.error(error)
@@ -24,7 +25,12 @@ const destroyCourseSuccess = function () {
 
 const updateCourseSuccess = function () {
   console.log('Holy shit it worked!')
-  courseEvents.rerunIndex()
+  // courseEvents.rerunIndex()
+}
+
+const updateCourseFailure = function () {
+  $('.invalid-credits').show()
+  // courseEvents.rerunIndex()
 }
 
 module.exports = {
@@ -32,5 +38,6 @@ module.exports = {
   indexCourseSuccess,
   destroyCourseSuccess,
   updateCourseSuccess,
+  updateCourseFailure,
   actionFailure
 }

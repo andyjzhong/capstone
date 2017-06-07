@@ -57,6 +57,14 @@ hr {
   padding: 10px;
 }
 
+.account-banner {
+  z-index: 10;
+  position: absolute;
+  top: 10;
+  left: 0;
+  width: 100%
+}
+
 html {
   // background: url('../../assets/images/sprout.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -83,7 +91,7 @@ html {
 
 // Footer styling
 .footer {
-  height: 370px;
+  height: 33%;
   background-color: #ebebeb;
   color: black;
   overflow: auto;
@@ -173,6 +181,11 @@ td {
   text-align: center;
 }
 
-#loginbtn, #signoutbtn, #changepassbtn, #registerbtn {
+#loginbtn, #signoutbtn, #changepassbtn, #registerbtn, #makebtn {
   background-color: #4b5320;
+  color: white;
+}
+
+#loginbtn:hover, #signoutbtn:hover, #changepassbtn:hover, #registerbtn:hover, #makebtn:hover {
+  background-color: #2a2e12;
 }

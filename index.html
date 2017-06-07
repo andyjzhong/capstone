@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Simply GPA</title>
+      <title>Course Log</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -18,7 +18,7 @@
     <nav class="navbar" role="navigation">
       <div class="container-fluid nav-container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Simply GPA</a>
+          <a class="navbar-brand" href="#">Course Log</a>
           <!-- AZ: Button for Hamburger Dropdown -->
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -31,7 +31,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
-              <!-- AZ: List of Auth Dropdown -->
+            <!-- AZ: List of Auth Dropdown -->
             <ul class="dropdown-menu">
               <li>
 
@@ -49,7 +49,7 @@
                         <input type="password" name="credentials[password]" class="form-control" id="inputPassword" placeholder="Password" required>
                       </div> <!-- AZ: End Sign In: Password -->
                       <div class="form-group">
-                        <button id="loginbtn" type="submit" class="btn btn-primary btn-block">Login</button>
+                        <button id="loginbtn" type="submit" class="btn btn-block">Login</button>
                       </div> <!-- AZ: End Sign In: Submit -->
                       <hr width="100%">
                       <a href="#" class="linkSignUp"><b>Register an Account</b></a>
@@ -76,7 +76,7 @@
                         <input type="password" name="credentials[password_confirmation]" class="form-control" id="inputPassword2" placeholder="Confirm Password" required>
                       </div> <!-- AZ: End Sign Up: Confirm Password -->
                       <div class="form-group">
-                        <button id="registerbtn" type="submit" class="btn btn-primary btn-block">Register</button>
+                        <button id="registerbtn" type="submit" class="btn btn-block">Register</button>
                       </div> <!-- AZ: End Sign Up: Submit -->
                       <hr width="100%">
                       <span class="have-account">Already Have an Account?</span><br><a href="#" class="linkSignIn"><b>Sign In</b></a>
@@ -99,7 +99,7 @@
                         <input type="password" name="passwords[new]" class="form-control" id="inputPassword3" placeholder="New Password" required>
                       </div> <!-- AZ: End Change Password: New -->
                       <div class="form-group">
-                        <button id="changepassbtn" type="submit" class="btn btn-primary btn-block">Change Password</button>
+                        <button id="changepassbtn" type="submit" class="btn btn-block">Change Password</button>
                       </div> <!-- AZ: End Change Password: Submit -->
                     </form>
                   </div>
@@ -112,7 +112,7 @@
                     <!-- AZ: Form for Sign Out -->
                     <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-out">
                       <hr width="100%">
-                      <button id="signoutbtn" type="submit" class="btn btn-primary btn-block">Sign Out</button>
+                      <button id="signoutbtn" type="submit" class="btn btn-block">Log Out</button>
                     </form>
                   </div>
                 </div>
@@ -127,13 +127,13 @@
     <!-- AZ: End of Navbar Component -->
 
     <!-- Start Alert -->
-    <div class="account-banner alert alert-success banner-in">Successfully logged in!</div>
-    <div class="account-banner alert alert-success banner-out">You have logged out.</div>
-    <div class="account-banner alert alert-danger banner-fail">The e-mail or password you have entered is invalid.</div>
-    <div class="account-banner alert alert-success register-success">You have successfully created an account! Please sign in.</div>
-    <div class="account-banner alert alert-danger register-fail">The e-mail and password you have entered is invalid.</div>
-    <div class="account-banner alert alert-success change-success">Your password has successfully been changed.</div>
-    <div class="account-banner alert alert-danger change-fail">The password you have entered is invalid.</div>
+    <div class="account-banner alert alert-success banner-in"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully logged in.</div>
+    <div class="account-banner alert alert-success banner-out"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have logged out.</div>
+    <div class="account-banner alert alert-danger banner-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The e-mail or password you have entered is invalid.</div>
+    <div class="account-banner alert alert-success register-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully created an account! Please sign in.</div>
+    <div class="account-banner alert alert-danger register-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The e-mail and password you have entered is invalid.</div>
+    <div class="account-banner alert alert-success change-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Your password has successfully been changed.</div>
+    <div class="account-banner alert alert-danger change-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The password you have entered is invalid.</div>
     <!-- End Alert -->
 
     <!-- Start Carousel -->
@@ -178,7 +178,7 @@
               <input type="number" class="form-control form-control-primary" id="inputWarning1" name="course[credits]" placeholder="Credits" required>
               <small class="form-text text-muted">Please enter a numerical value.</small>
             </div>
-            <button type="submit" class="btn btn-success btn-block">Create Course</button>
+            <button id="makebtn" type="submit" class="btn btn-block">Create Course</button>
           </form>
         </div>
         <br>
@@ -189,6 +189,8 @@
         <!-- <button id="indexButton" class="btn btn-success form-control" type="click">Index Courses</button> -->
 
         <!-- Handlebars to show all courses -->
+        <div class="credit-banner alert alert-success credit-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully saved your changes.</div>
+        <div class="credit-banner alert alert-danger credit-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The credit amount you have entered is invalid. Your changes are not saved.</div>
         <div id="handlebars-content"></div>
       </div> <!-- End Giant Container -->
 

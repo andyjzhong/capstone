@@ -5,9 +5,9 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 
 const setUpApp = function () {
-  $('').show()
-  $('.banner-in, .banner-out, .banner-fail, .change-success, .change-fail, .register-success, .register-fail').hide()
-  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits').hide()
+  $('').fadeIn('slow')
+  $('.banner-in, .banner-out, .banner-fail, .change-success, .change-fail, .register-success, .register-fail').fadeOut('slow')
+  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits').fadeOut('slow')
 }
 
 const onSignUp = function (event) {
@@ -42,19 +42,19 @@ const onSignOut = function (event) {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-  $('#sign-in-form').show()
-  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits').hide()
+  $('#sign-in-form').fadeIn('slow')
+  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits').fadeOut('slow')
 }
 
 const linkSignUp = function () {
-  $('#sign-in-form').hide()
-  $('#sign-up-form').show()
+  $('#sign-in-form').fadeOut('slow')
+  $('#sign-up-form').fadeIn('slow')
   $('#sign-up-form, #sign-in-form, #changepassword-form').trigger('reset')
 }
 
 const linkSignIn = function () {
-  $('#sign-up-form').hide()
-  $('#sign-in-form').show()
+  $('#sign-up-form').fadeOut('slow')
+  $('#sign-in-form').fadeIn('slow')
   $('#sign-up-form, #sign-in-form, #changepassword-form').trigger('reset')
 }
 

@@ -6,7 +6,7 @@ const ui = require('./ui.js')
 
 const setUpApp = function () {
   $('').show()
-  $('.banner-in, .banner-out, .banner-fail, .change-success, .change-fail').hide()
+  $('.banner-in, .banner-out, .banner-fail, .change-success, .change-fail, .register-success, register-fail').hide()
   $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits').hide()
 }
 

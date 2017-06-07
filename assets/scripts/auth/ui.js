@@ -16,10 +16,16 @@ const signInSuccess = (data) => {
   store.user = data.user
   console.log('sign in ran and data is ', data)
   courseEvents.rerunIndex()
+  $('.giant-container, .footer, #sign-out, #changepassword-form').show()
+  $('#sign-in-form, #sign-up-form, #invalid-credits').hide()
+  $('.banner-in').show()
+  $('.banner-out, .banner-fail').hide()
 }
 
 const signInFailure = (error) => {
   console.error('sign in failed and the error is ', error)
+  $('.banner-fail').show()
+  $('.banner-out, .banner-in').hide()
 }
 
 const changePasswordSuccess = (data) => {
@@ -32,6 +38,8 @@ const changePasswordFailure = (error) => {
 
 const signOutSuccess = () => {
   store.user = null
+  $('.banner-out').show()
+  $('.banner-in, .banner-fail').hide()
 }
 
 const signOutFailure = (error) => {

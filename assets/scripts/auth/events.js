@@ -6,6 +6,7 @@ const ui = require('./ui.js')
 
 const setUpApp = function () {
   $('').show()
+  $('.banner-in, .banner-out, .banner-fail').hide()
   $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits').hide()
 }
 
@@ -25,8 +26,6 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
   $('#sign-in-form').trigger('reset')
-  $('.giant-container, .footer, #sign-out, #changepassword-form').show()
-  $('#sign-in-form, #sign-up-form, #invalid-credits').hide()
 }
 
 const onChangePassword = function (event) {

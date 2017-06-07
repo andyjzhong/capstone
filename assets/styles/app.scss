@@ -20,6 +20,17 @@ hr {
   padding: 0;
 }
 
+#home-pic {
+  height: 370px;
+  max-height: 370px;
+  background-color: rgba(255,255,255,.85);
+}
+
+.landscape {
+  height: 300px;
+  width: auto;
+}
+
 .giant-container, .nav-container {
   padding-left: 15px;
   padding-right: 15px;
@@ -47,7 +58,7 @@ hr {
 }
 
 html {
-  background: url('../../assets/images/sprout.jpg') no-repeat center center fixed;
+  // background: url('../../assets/images/sprout.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Lato', sans-serif;
 }
@@ -72,9 +83,10 @@ html {
 
 // Footer styling
 .footer {
-  height: 300px;
+  height: 370px;
   background-color: #ebebeb;
   color: black;
+  overflow: auto;
 }
 
 .box {
@@ -93,6 +105,10 @@ h4 {
   border-top-color: black;
 }
 
+.footer-address-line {
+  border-top-color: #dedfe0;
+}
+
 // Creation Form
 .creation-container {
   max-width: 40%;
@@ -109,7 +125,7 @@ h3 {
 
 // Table Formatting
 #handlebars-content {
-  margin-top: 60px;
+  margin-top: 40px;
   margin-bottom: 60px;
 }
 

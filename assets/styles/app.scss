@@ -47,10 +47,27 @@ html {
   max-height: 100px;
 }
 
+// Footer styling
 .footer {
   height: 300px;
-  background-color: black;
-  color: white;
+  background-color: #ebebeb;
+  color: black;
+}
+
+.box {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+
+// Creation Form
+.creation-container {
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
 }
 
 #create-course-form {
@@ -59,10 +76,16 @@ html {
 
 // Table Formatting
 #handlebars-content {
-  margin-top: 100px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 #course-table{
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.hbs-narrative {
   max-width: 80%;
   margin: 0 auto;
 }

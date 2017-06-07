@@ -51,6 +51,7 @@ const onCreateCourse = function (event) {
     .then(ui.createCourseSuccess)
     .catch(ui.actionFailure)
     .then(rerunIndex)
+  $('#create-course-form').trigger('reset')
 }
 
 // This function allows fields to be changed and displays the Edit UI

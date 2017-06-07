@@ -99,6 +99,7 @@ const onSaveCourse = function (event) {
     .catch(ui.actionFailure)
   $('td[data-id=' + id + ']').attr('contenteditable', 'false')
   $('tr[data-id=' + id + ']').css('border', 'none')
+  $('tr[data-id=' + id + ']').css('background-color', 'rgba(255,255,255,.8)')
   // $('.saveButton, .cancelButton').hide()
   // $('.editButton, .destroyButton').show()
 }
@@ -109,6 +110,7 @@ const onCancelCourse = function (event) {
   const id = $(this).attr('data-id')
   $('td[data-id=' + id + ']').attr('contenteditable', 'false')
   $('tr[data-id=' + id + ']').css('border', 'none')
+  $('tr[data-id=' + id + ']').css('background-color', 'none')
   api.indexCourses()
     .then(ui.indexCourseSuccess)
     .then(() => {

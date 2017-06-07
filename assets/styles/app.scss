@@ -39,6 +39,7 @@ hr {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
+  color: black;
 }
 
 .have-account {
@@ -51,9 +52,18 @@ html {
   font-family: 'Lato', sans-serif;
 }
 
+.dropdown {
+  background-color: rgba(255,255,255,.8);
+}
+
 .dropdown-menu {
   min-width: 260px;
   padding: 10px;
+  background-color: rgba(255,255,255,.8);
+}
+
+.dropdown-toggle {
+  color: black;
 }
 
 .carousel-item {

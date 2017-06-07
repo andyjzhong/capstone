@@ -24,6 +24,7 @@ const destroyCourseSuccess = function () {
 
 const updateCourseSuccess = function () {
   console.log('Holy shit it worked!')
+  courseEvents.rerunIndex()
 }
 
 module.exports = {

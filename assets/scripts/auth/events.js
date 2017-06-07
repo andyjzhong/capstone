@@ -6,7 +6,7 @@ const ui = require('./ui.js')
 
 const setUpApp = function () {
   $('').show()
-  $('.banner-in, .banner-out, .banner-fail, .change-success, .change-fail, .register-success, register-fail').hide()
+  $('.banner-in, .banner-out, .banner-fail, .change-success, .change-fail, .register-success, .register-fail').hide()
   $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits').hide()
 }
 
@@ -49,13 +49,13 @@ const onSignOut = function (event) {
 const linkSignUp = function () {
   $('#sign-in-form').hide()
   $('#sign-up-form').show()
-  $('#signup-form, #sign-in-form, #changepassword-form').trigger('reset')
+  $('#sign-up-form, #sign-in-form, #changepassword-form').trigger('reset')
 }
 
 const linkSignIn = function () {
   $('#sign-up-form').hide()
   $('#sign-in-form').show()
-  $('#signup-form, #sign-in-form, #changepassword-form').trigger('reset')
+  $('#sign-up-form, #sign-in-form, #changepassword-form').trigger('reset')
 }
 
 const addHandlers = () => {

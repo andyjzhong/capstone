@@ -49,7 +49,7 @@
                         <input type="password" name="credentials[password]" class="form-control" id="inputPassword" placeholder="Password" required>
                       </div> <!-- AZ: End Sign In: Password -->
                       <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        <button id="loginbtn" type="submit" class="btn btn-primary btn-block">Login</button>
                       </div> <!-- AZ: End Sign In: Submit -->
                       <hr width="100%">
                       <a href="#" class="linkSignUp"><b>Register an Account</b></a>
@@ -76,7 +76,7 @@
                         <input type="password" name="credentials[password_confirmation]" class="form-control" id="inputPassword2" placeholder="Confirm Password" required>
                       </div> <!-- AZ: End Sign Up: Confirm Password -->
                       <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <button id="registerbtn" type="submit" class="btn btn-primary btn-block">Register</button>
                       </div> <!-- AZ: End Sign Up: Submit -->
                       <hr width="100%">
                       <span class="have-account">Already Have an Account?</span><br><a href="#" class="linkSignIn"><b>Sign In</b></a>
@@ -99,7 +99,7 @@
                         <input type="password" name="passwords[new]" class="form-control" id="inputPassword3" placeholder="New Password" required>
                       </div> <!-- AZ: End Change Password: New -->
                       <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Change Password</button>
+                        <button id="changepassbtn" type="submit" class="btn btn-primary btn-block">Change Password</button>
                       </div> <!-- AZ: End Change Password: Submit -->
                     </form>
                   </div>
@@ -112,7 +112,7 @@
                     <!-- AZ: Form for Sign Out -->
                     <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-out">
                       <hr width="100%">
-                      <button type="submit" class="btn btn-primary btn-block">Sign Out</button>
+                      <button id="signoutbtn" type="submit" class="btn btn-primary btn-block">Sign Out</button>
                     </form>
                   </div>
                 </div>

@@ -30,16 +30,20 @@ const signInFailure = (error) => {
 
 const changePasswordSuccess = (data) => {
   console.log('change password ran and data is ', data)
+  $('.change-success').show()
+  $('.banner-out, .banner-in, .change-fail').hide()
 }
 
 const changePasswordFailure = (error) => {
   console.error('change password failed and the error is ', error)
+  $('.change-fail').show()
+  $('.banner-out, .banner-in, .change-success').hide()
 }
 
 const signOutSuccess = () => {
   store.user = null
   $('.banner-out').show()
-  $('.banner-in, .banner-fail').hide()
+  $('.banner-in, .banner-fail, .change-success, .change-fail').hide()
 }
 
 const signOutFailure = (error) => {

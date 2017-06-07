@@ -3,8 +3,17 @@
   border-radius: 0 !important;
 }
 
-a {
-  color: black;
+// a {
+//   color: black;
+// }
+
+hr {
+  margin: 1px auto;
+  padding-bottom: 10px;
+}
+
+#main-line {
+  margin: 15px;
 }
 
 .container-fluid {
@@ -30,6 +39,10 @@ a {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
+}
+
+.have-account {
+  padding: 10px;
 }
 
 html {
@@ -58,6 +71,16 @@ html {
   margin: 0 auto;
   padding: 10px;
   text-align: center;
+}
+
+h4 {
+  color: #4b5320;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.footer-line {
+  border-top-color: black;
 }
 
 // Creation Form

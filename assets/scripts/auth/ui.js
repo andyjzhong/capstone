@@ -6,7 +6,6 @@ const courseEvents = require('../courses/events.js')
 
 const signUpSuccess = (data) => {
   console.log('signUpSuccess ran and data is ', data)
-  $('.alert-success').alert()
 }
 
 const signUpFailure = (error) => {

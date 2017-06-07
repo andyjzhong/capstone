@@ -49,9 +49,10 @@
                         <input type="password" name="credentials[password]" class="form-control" id="inputPassword" placeholder="Password" required>
                       </div> <!-- AZ: End Sign In: Password -->
                       <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Sign-In</button>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
                       </div> <!-- AZ: End Sign In: Submit -->
-                      <a href="#" class="linkSignUp"><b>Create an Account</b></a>
+                      <hr width="100%">
+                      <a href="#" class="linkSignUp"><b>Register an Account</b></a>
                     </form> <!-- AZ: End Sign In Form -->
                   </div>
                 </div>
@@ -59,7 +60,7 @@
 
                 <!-- AZ: Container for Sign Up -->
                 <div class="row sign-up">
-                  <div class="col-md-12">
+                  <div class="col-md-12 text-center">
                     <!-- AZ: Form for Sign Up -->
                     <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-up-form">
                       <div class="form-group">
@@ -72,11 +73,13 @@
                       </div> <!-- AZ: End Sign Up: Password -->
                       <div class="form-group">
                         <label class="sr-only" for="exampleInputPassword2">Confirm Password</label>
-                        <input type="password" name="credentials[password_confirmation]" class="form-control" id="inputPassword2" placeholder="Password" required>
+                        <input type="password" name="credentials[password_confirmation]" class="form-control" id="inputPassword2" placeholder="Confirm Password" required>
                       </div> <!-- AZ: End Sign Up: Confirm Password -->
                       <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Sign-Up</button>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
                       </div> <!-- AZ: End Sign Up: Submit -->
+                      <hr width="100%">
+                      <span class="have-account">Already Have an Account?</span><br><a href="#" class="linkSignIn"><b>Sign In</b></a>
                     </form>
                   </div>
                 </div>
@@ -108,6 +111,7 @@
                   <div class="col-md-12">
                     <!-- AZ: Form for Sign Out -->
                     <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-out">
+                      <hr width="100%">
                       <button type="submit" class="btn btn-primary btn-block">Sign Out</button>
                     </form>
                   </div>
@@ -172,7 +176,7 @@
         <br>
         <!-- End of Course Creation Form -->
 
-        <hr width="90%">
+        <hr id="main-line" width="90%">
 
         <!-- <button id="indexButton" class="btn btn-success form-control" type="click">Index Courses</button> -->
 
@@ -180,17 +184,43 @@
         <div id="handlebars-content"></div>
       </div> <!-- End Giant Container -->
 
+      <!-- Start Footer -->
       <div class="footer">
         <div class="box col-xs-4">
-          <p>Temporarily a big block of nothing.</p>
+          <h4>Column 1</h4>
+          <hr class="footer-line" width="80%">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.</p>
         </div>
         <div class="box col-xs-4">
-          <p>Temporarily a big block of nothing.</p>
+          <h4>Column 2</h4>
+          <hr class="footer-line" width="80%">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.</p>
         </div>
         <div class="box col-xs-4">
-          <p>Temporarily a big block of nothing.</p>
+          <h4>Column 3</h4>
+          <hr class="footer-line" width="80%">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.</p>
         </div>
       </div>
+      <!-- End Footer -->
 
     </body>
 </html>

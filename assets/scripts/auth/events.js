@@ -6,7 +6,7 @@ const ui = require('./ui.js')
 
 const setUpApp = function () {
   $('').show()
-  $('.giant-container, .footer, #sign-out, #changepassword-form').hide()
+  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form').hide()
 }
 
 const onSignUp = function (event) {
@@ -47,11 +47,25 @@ const onSignOut = function (event) {
   $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form').hide()
 }
 
+const linkSignUp = function () {
+  $('#sign-in-form').hide()
+  $('#sign-up-form').show()
+  $('#signup-form, #sign-in-form, #changepassword-form').trigger('reset')
+}
+
+const linkSignIn = function () {
+  $('#sign-up-form').hide()
+  $('#sign-in-form').show()
+  $('#signup-form, #sign-in-form, #changepassword-form').trigger('reset')
+}
+
 const addHandlers = () => {
   $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
   $('#changepassword-form').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('.linkSignUp').on('click', linkSignUp)
+  $('.linkSignIn').on('click', linkSignIn)
 }
 
 module.exports = {

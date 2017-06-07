@@ -107,6 +107,15 @@ const onCancelCourse = function (event) {
   const id = $(this).attr('data-id')
   $('td[data-id=' + id + ']').attr('contenteditable', 'false')
   $('tr[data-id=' + id + ']').css('border', 'none')
+  api.indexCourses()
+    .then(ui.indexCourseSuccess)
+    .then(() => {
+      $('.destroyButton').on('click', onDestroyCourse)
+      $('.editButton').on('click', onEditCourse)
+      $('.saveButton').on('click', onSaveCourse)
+      $('.cancelButton').on('click', onCancelCourse)
+    })
+    .catch(ui.actionFailure)
   // $('.saveButton, .cancelButton').hide()
   // $('.editButton, .destroyButton').show()
 }

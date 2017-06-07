@@ -52,3 +52,51 @@ html {
   background-color: black;
   color: white;
 }
+
+#create-course-form {
+  margin: 0 auto;
+}
+
+// Table Formatting
+#handlebars-content {
+  margin-top: 100px;
+}
+
+#course-table{
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+table {
+  max-width: 80%;
+  table-layout: fixed;
+}
+
+tr {
+  max-height: 20px;
+}
+
+#largeCol {
+  width: 32%;
+}
+
+#mediumCol {
+  width: 18%;
+}
+
+#smallCol {
+  width: 15%;
+  text-align: center;
+}
+
+#actionCol {
+  width: 10%;
+}
+
+td {
+  overflow: scroll
+}
+
+.C3, .C4 {
+  text-align: center;
+}

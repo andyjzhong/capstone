@@ -145,39 +145,35 @@
         <br>
 
         <!-- Start of Course Creation Form -->
-        <!-- <div class="course-creator">
-          <form id="create-course-form">
-            <input type="text" class="form-control form-inline col-xs-3" name="course[title]" placeholder="Course Title" required>
-            <input type="text" class="form-control form-inline col-xs-3" name="course[semester]" placeholder="Semester" required>
-            <input type="text" class="form-control form-inline col-xs-3" name="course[grade]" placeholder="Grade" required>
-            <input type="text" class="form-control form-inline col-xs-3" name="course[credits]" placeholder="Credits" required>
-            <button type="submit" class="btn btn-warning btn-block">Create Course</button>
-          </form>
-        </div>
-        <br> -->
         <div>
-          <form id="create-course-form" class="form-inline">
-            <label class="sr-only" for="inlineFormInput">Name</label>
-            <input type="text" class="form-control" name="course[title]" placeholder="Course Title" required>
-
-            <label class="sr-only" for="inlineFormInput">Semester</label>
-            <input type="text" class="form-control" name="course[semester]" placeholder="Semester" required>
-
-            <label class="sr-only" for="inlineFormInput">Grade</label>
-            <input type="text" class="form-control" name="course[grade]" placeholder="Grade" required>
-
-            <label class="sr-only" for="inlineFormInput">Credits</label>
-            <input type="text" class="form-control" name="course[credits]" placeholder="Credits" required>
-
+          <form id="create-course-form">
+            <div class="form-group has-warning">
+              <label class="form-control-label" for="inputWarning1">Course Name</label>
+              <input type="text" class="form-control form-control-warning" id="inputWarning1" name="course[title]" placeholder="Course Title" required>
+            </div>
+            <div class="form-group has-warning">
+              <label class="form-control-label" for="inputWarning1">Semester</label>
+              <input type="text" class="form-control form-control-warning" id="inputWarning1" name="course[semester]" placeholder="Semester" required>
+            </div>
+            <div class="form-group has-warning">
+              <label class="form-control-label" for="inputWarning1">Grade</label>
+              <input type="text" class="form-control form-control-warning" id="inputWarning1" name="course[grade]" placeholder="Grade" required>
+              <small class="form-text text-muted">Please enter your grade.</small>
+            </div>
+            <div class="form-group has-warning">
+              <label class="form-control-label" for="inputWarning1">Credits</label>
+              <input type="text" class="form-control form-control-warning" id="inputWarning1" name="course[credits]" placeholder="Credits" required>
+              <small class="form-text text-muted">Please enter a numerical value.</small>
+            </div>
             <button type="submit" class="btn btn-warning btn-block">Create Course</button>
           </form>
         </div>
+
         <!-- End of Course Creation Form -->
+        <button id="indexButton" class="btn btn-success form-control" type="click">Index Courses</button>
 
         <!-- Handlebars to show all courses -->
-        <button id="indexButton" class="btn btn-success form-control" type="click">Index Courses</button>
         <div id="handlebars-content"></div>
-
       </div> <!-- End Giant Container -->
 
       <!-- <div class="footer">

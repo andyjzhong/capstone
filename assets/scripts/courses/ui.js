@@ -14,10 +14,15 @@ const createCourseSuccess = function (data) {
 }
 
 const indexCourseSuccess = function (data) {
-  // console.log('Successfully indexed Courses.')
-  // console.log('Data is: ', data)
-  const indexCoursesHtml = indexCoursesTemplate({ courses: data.courses })
-  $('#handlebars-content').html(indexCoursesHtml)
+  if (data.courses.length < 1) {
+    const indexCoursesHtml = indexCoursesTemplate({ courses: data.courses })
+    $('#handlebars-content').html(indexCoursesHtml)
+    $('#no-courses').show()
+  } else {
+    const indexCoursesHtml = indexCoursesTemplate({ courses: data.courses })
+    $('#handlebars-content').html(indexCoursesHtml)
+    $('#no-courses').hide()
+  }
 }
 
 const destroyCourseSuccess = function () {
@@ -42,7 +47,7 @@ const updateCourseFailure = function () {
       $('.saveButton').on('click', courseEvents.onSaveCourse)
       $('.cancelButton').on('click', courseEvents.onCancelCourse)
     })
-    .catch(actionFailure)
+    .catch(updateCourseFailure)
 }
 
 module.exports = {

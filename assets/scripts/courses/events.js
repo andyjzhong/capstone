@@ -17,6 +17,8 @@ const onIndexCourses = function () {
       $('.cancelButton').on('click', onCancelCourse)
     })
     .catch(ui.actionFailure)
+  $('.saveButton').hide()
+  $('.cancelButton').hide()
 }
 
 const rerunIndex = function () {
@@ -53,27 +55,29 @@ const onCreateCourse = function (event) {
     .then(rerunIndex)
   $('#create-course-form').trigger('reset')
   $('.create-success').fadeIn()
-  $('.create-success').fadeOut(8000)
+  $('.create-success').fadeOut(4500)
 }
 
 // This function allows fields to be changed and displays the Edit UI
 const onEditCourse = function (event) {
   // console.log('onEditCourse from Events.js ran.')
   const id = $(this).attr('data-id')
-  $('td[data-id=' + id + ']').attr('contenteditable', 'true')
+  $($('tr[data-id=' + id + ']').children()[0]).attr('contenteditable', 'true')
+  $($('tr[data-id=' + id + ']').children()[1]).attr('contenteditable', 'true')
+  $($('tr[data-id=' + id + ']').children()[2]).attr('contenteditable', 'true')
+  $($('tr[data-id=' + id + ']').children()[3]).attr('contenteditable', 'true')
+  // $($('tr[data-id=' + id + ']').children()[3])[0].innerHTML.validate({
+  //   rules: {
+  //     key: 'required integer'
+  //   }
+  // })
+  console.log('Value is: ', $($('tr[data-id=' + id + ']').children()[3])[0].innerHTML)
   $('tr[data-id=' + id + ']').css('border', '3px solid #4f81c5')
   $('tr[data-id=' + id + ']').css('background-color', '#FCF8E3')
   $('.submit-edit').on('click', onSaveCourse)
   $('.cancel-edit').on('click', onCancelCourse)
-  const thisEditButton = $(this)
-  const thisDestroyButton = $(this).parent().parent().find('td.C6')[0].firstElementChild
-  // console.log('This Button is: ', thisEditButton)
-  // console.log('This Button is: ', thisDestroyButton)
-  $(this).hide()
-  $(this.parent).hide()
-
-  // $('.saveButton, .cancelButton').show()
-  // $('.editButton, .destroyButton').hide()
+  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).hide()
+  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).hide()
 }
 
 // This function will ultimately be what actually fires the ajax call for updating this item.
@@ -99,18 +103,26 @@ const onSaveCourse = function (event) {
   api.updateCourse(data, id)
     .then(ui.updateCourseSuccess)
     .catch(ui.updateCourseFailure)
-  $('td[data-id=' + id + ']').attr('contenteditable', 'false')
+  $($('tr[data-id=' + id + ']').children()[0]).attr('contenteditable', 'false')
+  $($('tr[data-id=' + id + ']').children()[1]).attr('contenteditable', 'false')
+  $($('tr[data-id=' + id + ']').children()[2]).attr('contenteditable', 'false')
+  $($('tr[data-id=' + id + ']').children()[3]).attr('contenteditable', 'false')
   $('tr[data-id=' + id + ']').css('border', 'none')
   $('tr[data-id=' + id + ']').css('background-color', 'rgba(255,255,255,.8)')
-  // $('.saveButton, .cancelButton').hide()
-  // $('.editButton, .destroyButton').show()
+  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).show()
+  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).show()
+  $($($($('tr[data-id=' + id + ']').children()[4])[1]).children()[0]).hide()
+  $($($($('tr[data-id=' + id + ']').children()[5])[1]).children()[0]).hide()
 }
 
 // This function reverts all fields back to being uneditable.
 const onCancelCourse = function (event) {
   // console.log('onCancelCourse from Events.js ran.')
   const id = $(this).attr('data-id')
-  $('td[data-id=' + id + ']').attr('contenteditable', 'false')
+  $($('tr[data-id=' + id + ']').children()[0]).attr('contenteditable', 'false')
+  $($('tr[data-id=' + id + ']').children()[1]).attr('contenteditable', 'false')
+  $($('tr[data-id=' + id + ']').children()[2]).attr('contenteditable', 'false')
+  $($('tr[data-id=' + id + ']').children()[3]).attr('contenteditable', 'false')
   $('tr[data-id=' + id + ']').css('border', 'none')
   $('tr[data-id=' + id + ']').css('background-color', 'none')
   api.indexCourses()
@@ -122,8 +134,10 @@ const onCancelCourse = function (event) {
       $('.cancelButton').on('click', onCancelCourse)
     })
     .catch(ui.actionFailure)
-  // $('.saveButton, .cancelButton').hide()
-  // $('.editButton, .destroyButton').show()
+  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).show()
+  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).show()
+  $($($($('tr[data-id=' + id + ']').children()[4])[1]).children()[0]).hide()
+  $($($($('tr[data-id=' + id + ']').children()[5])[1]).children()[0]).hide()
 }
 
 const addHandlers = () => {

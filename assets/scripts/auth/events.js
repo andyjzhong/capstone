@@ -7,7 +7,7 @@ const ui = require('./ui.js')
 const setUpApp = function () {
   $('').fadeIn('slow')
   $('.banner-in, .banner-out, .banner-fail, .change-success, .change-fail, .register-success, .register-fail, .credit-success, .credit-fail, .create-success').hide()
-  $('.parallax, .giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form').hide()
+  $('#no-courses, .parallax, .giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form').hide()
 }
 
 const onSignUp = function (event) {

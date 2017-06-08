@@ -30,6 +30,7 @@ hr {
 .paragraph {
   width: 50%;
   margin: 0 auto;
+  font-size: 16px;
 }
 
 .landscape {
@@ -238,4 +239,8 @@ td {
 // Start Carousel
 .carousel-inner {
   height: 925px;
+}
+
+.table-text {
+  font-size: 16px;
 }

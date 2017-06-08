@@ -24,7 +24,7 @@ const signInSuccess = (data) => {
   courseEvents.rerunIndex()
   $('.footer, #sign-out, #changepassword-form').show()
   $('#sign-in-form, #sign-up-form, #invalid-credits').hide()
-  $('.banner-in, .giant-container').fadeIn('slow')
+  $('.parallax, .banner-in, .giant-container').fadeIn('slow')
   $('.banner-in').fadeOut(6000)
   $('.banner-out, .banner-fail, .register-fail, .change-success, .change-fail, .register-success, .credit-success, .credit-fail, .create-success').hide()
 }

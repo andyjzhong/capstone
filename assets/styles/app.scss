@@ -199,3 +199,27 @@ td {
 #loginbtn:hover, #signoutbtn:hover, #changepassbtn:hover, #registerbtn:hover, #makebtn:hover {
   background-color: #2a2e12;
 }
+
+// .grow:hover {
+//   -webkit-transform: scale(1.3);
+//   -ms-transform: scale(1.3);
+//   transform: scale(1.3);
+// }
+
+.highlight:hover {
+  box-shadow: inset 0 0 0 1px white;
+}
+
+// Start Parallax
+.parallax {
+  background: url('../../assets/images/bookshelf.jpg') no-repeat fixed 100%;
+  // background-color: #e5e5e5;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.parallax-inner {
+  padding-top: 5%;
+  padding-bottom: 10%;
+}

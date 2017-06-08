@@ -7,7 +7,7 @@ const ui = require('./ui.js')
 const setUpApp = function () {
   $('').fadeIn('slow')
   $('.banner-in, .banner-out, .banner-fail, .change-success, .change-fail, .register-success, .register-fail, .credit-success, .credit-fail, .create-success').hide()
-  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form').hide()
+  $('.parallax, .giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form').hide()
 }
 
 const onSignUp = function (event) {
@@ -43,7 +43,7 @@ const onSignOut = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
   $('#sign-in-form').show()
-  $('.giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits, .credit-success, .credit-fail').hide()
+  $('.parallax, .giant-container, .footer, #sign-out, #changepassword-form, #sign-up-form, #invalid-credits, .credit-success, .credit-fail').hide()
 }
 
 const linkSignUp = function () {

@@ -28,7 +28,6 @@ const updateCourseSuccess = function () {
   $('.credit-success').fadeIn()
   $('.credit-success').fadeOut(8000)
   $('.credit-fail').hide()
-
 }
 
 const updateCourseFailure = function () {

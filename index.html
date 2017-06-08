@@ -134,14 +134,17 @@
     <div class="account-banner alert alert-danger register-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The e-mail and password you have entered is invalid.</div>
     <div class="account-banner alert alert-success change-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Your password has successfully been changed.</div>
     <div class="account-banner alert alert-danger change-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The password you have entered is invalid.</div>
+    <div class="credit-banner alert alert-success credit-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully updated your course.</div>
+    <div class="credit-banner alert alert-danger credit-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The credit amount you have entered is invalid. Your changes were not saved.</div>
+    <div class="credit-banner alert alert-success create-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully logged your course.</div>
     <!-- End Alert -->
 
     <!-- Start Carousel -->
     <!-- End Carousel -->
 
-    <div id="home-pic">
+    <!-- <div id="home-pic">
       <a href="#"><img class='landscape' alt='image' src='../../assets/images/sprout.jpg'/></a>
-    </div>
+    </div> -->
 
       <div class="giant-container">
 
@@ -178,20 +181,28 @@
               <input type="number" class="form-control form-control-primary" id="inputWarning1" name="course[credits]" placeholder="Credits" required>
               <small class="form-text text-muted">Please enter a numerical value.</small>
             </div>
-            <button id="makebtn" type="submit" class="btn btn-block">Create Course</button>
+            <button id="makebtn" type="submit" class="btn btn-block highlight">Create Course</button>
           </form>
         </div>
         <br>
         <!-- End of Course Creation Form -->
 
         <hr id="main-line" width="90%">
+      </div> <!-- End Giant Container -->
 
+
+
+      <!-- Parallax -->
+      <section class="parallax">
+        <div class="parallax-inner">
+        </div>
+      </section>
+
+      <div class="giant-container">
+        <hr id="main-line" width="90%">
         <!-- <button id="indexButton" class="btn btn-success form-control" type="click">Index Courses</button> -->
 
         <!-- Handlebars to show all courses -->
-        <div class="credit-banner alert alert-success credit-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully updated your course.</div>
-        <div class="credit-banner alert alert-danger credit-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The credit amount you have entered is invalid. Your changes were not saved.</div>
-        <div class="credit-banner alert alert-success create-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully logged your course.</div>
         <div id="handlebars-content"></div>
       </div> <!-- End Giant Container -->
 

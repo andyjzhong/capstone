@@ -4,8 +4,6 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const courseStore = require('../courseStore')
 const api = require('./api')
 const ui = require('./ui')
-const saveButtonTemplate = require('../templates/helpers/save-edit-buttons.hbs')
-const cancelButtonTemplate = require('../templates/helpers/cancel-edit-buttons.hbs')
 
 const onIndexCourses = function () {
   // console.log('onIndexCourse from Events.js Ran')
@@ -78,13 +76,13 @@ const onEditCourse = function (event) {
   console.log('Value is: ', $($('tr[data-id=' + id + ']').children()[3])[0].innerHTML)
   $('tr[data-id=' + id + ']').css('border', '3px solid #4f81c5')
   $('tr[data-id=' + id + ']').css('background-color', '#FCF8E3')
-  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).hide()
-  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).hide()
-  $('.editButton, .destroyButton').hide()
-  $('.saveHBS').html(saveButtonTemplate)
-  $('.cancelHBS').html(cancelButtonTemplate)
-  $('.submit-edit').on('click', onSaveCourse)
-  $('.cancel-edit').on('click', onCancelCourse)
+  // $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).hide()
+  // $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).hide()
+  $('.editButton, .destroyButton, .saveButton, .cancelButton').hide()
+  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[1]).show()
+  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[1]).show()
+  $('.saveButton').on('click', onSaveCourse)
+  $('.cancelButton').on('click', onCancelCourse)
 }
 
 // This function will ultimately be what actually fires the ajax call for updating this item.
@@ -143,8 +141,12 @@ const onCancelCourse = function (event) {
     .catch(ui.actionFailure)
   $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).show()
   $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).show()
-  $($($($('tr[data-id=' + id + ']').children()[4])[1]).children()[0]).hide()
-  $($($($('tr[data-id=' + id + ']').children()[5])[1]).children()[0]).hide()
+  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[1]).hide()
+  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[1]).hide()
+}
+
+const hideAway = function () {
+  $('.cancelButton').hide()
 }
 
 const addHandlers = () => {
@@ -153,7 +155,7 @@ const addHandlers = () => {
   $('.destroyButton').on('click', onDestroyCourse)
   $('.editButton').on('click', onEditCourse)
   $('.saveButton').on('click', onSaveCourse)
-  $('.cancel-edit').on('click', onCancelCourse)
+  $('.cancelButton').on('click', onCancelCourse)
 }
 
 module.exports = {

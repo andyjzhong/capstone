@@ -1,6 +1,8 @@
 'use strict'
 
 const indexCoursesTemplate = require('../templates/helpers/course-displayer.hbs')
+const saveButtonTemplate = require('../templates/helpers/save-edit-buttons.hbs')
+const cancelButtonTemplate = require('../templates/helpers/cancel-edit-buttons.hbs')
 const api = require('./api')
 const courseEvents = require('./events')
 

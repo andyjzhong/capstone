@@ -2,6 +2,7 @@
 
 const indexCoursesTemplate = require('../templates/helpers/course-displayer.hbs')
 const api = require('./api')
+const courseStore = require('../courseStore')
 const courseEvents = require('./events')
 
 const actionFailure = function (error) {
@@ -48,6 +49,7 @@ const updateCourseFailure = function () {
       $('.cancelButton').on('click', courseEvents.onCancelCourse)
     })
     .catch(updateCourseFailure)
+  courseStore.id = null
 }
 
 module.exports = {

@@ -6,7 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onIndexCourses = function () {
-  console.log('onIndexCourse from Events.js Ran')
+  // console.log('onIndexCourse from Events.js Ran')
   event.preventDefault()
   api.indexCourses()
     .then(ui.indexCourseSuccess)
@@ -20,7 +20,7 @@ const onIndexCourses = function () {
 }
 
 const rerunIndex = function () {
-  console.log('rerunIndex from Events.js Ran')
+  // console.log('rerunIndex from Events.js Ran')
   api.indexCourses()
     .then(ui.indexCourseSuccess)
     .then(() => {
@@ -35,7 +35,7 @@ const rerunIndex = function () {
 const onDestroyCourse = function (event) {
   event.preventDefault()
   const id = $(this).attr('data-id')
-  console.log(id)
+  // console.log(id)
   api.destroyCourse(id)
     .then(ui.destroyCourseSuccess)
     .catch(ui.actionFailure)
@@ -52,11 +52,13 @@ const onCreateCourse = function (event) {
     .catch(ui.actionFailure)
     .then(rerunIndex)
   $('#create-course-form').trigger('reset')
+  $('.create-success').fadeIn()
+  $('.create-success').fadeOut(8000)
 }
 
 // This function allows fields to be changed and displays the Edit UI
 const onEditCourse = function (event) {
-  console.log('onEditCourse from Events.js ran.')
+  // console.log('onEditCourse from Events.js ran.')
   const id = $(this).attr('data-id')
   $('td[data-id=' + id + ']').attr('contenteditable', 'true')
   $('tr[data-id=' + id + ']').css('border', '3px solid #4f81c5')
@@ -65,8 +67,8 @@ const onEditCourse = function (event) {
   $('.cancel-edit').on('click', onCancelCourse)
   const thisEditButton = $(this)
   const thisDestroyButton = $(this).parent().parent().find('td.C6')[0].firstElementChild
-  console.log('This Button is: ', thisEditButton)
-  console.log('This Button is: ', thisDestroyButton)
+  // console.log('This Button is: ', thisEditButton)
+  // console.log('This Button is: ', thisDestroyButton)
   $(this).hide()
   $(this.parent).hide()
 
@@ -93,7 +95,7 @@ const onSaveCourse = function (event) {
       'credits': strippedCredits
     }
   }
-  console.log(data, id)
+  // console.log(data, id)
   api.updateCourse(data, id)
     .then(ui.updateCourseSuccess)
     .catch(ui.updateCourseFailure)
@@ -106,7 +108,7 @@ const onSaveCourse = function (event) {
 
 // This function reverts all fields back to being uneditable.
 const onCancelCourse = function (event) {
-  console.log('onCancelCourse from Events.js ran.')
+  // console.log('onCancelCourse from Events.js ran.')
   const id = $(this).attr('data-id')
   $('td[data-id=' + id + ']').attr('contenteditable', 'false')
   $('tr[data-id=' + id + ']').css('border', 'none')

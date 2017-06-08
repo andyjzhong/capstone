@@ -21,9 +21,15 @@ hr {
 }
 
 #home-pic {
-  height: 370px;
-  max-height: 370px;
-  background-color: rgba(255,255,255,.85);
+  height: 925px;
+  margin: 0 auto;
+  background: url('../../assets/images/student.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.paragraph {
+  width: 50%;
+  margin: 0 auto;
 }
 
 .landscape {

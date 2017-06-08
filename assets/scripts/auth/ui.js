@@ -9,6 +9,9 @@ const signUpSuccess = (data) => {
   $('.register-success').fadeIn('slow')
   $('.register-success').fadeOut(6000)
   $('.banner-out, .banner-fail, .banner-in, .register-fail, .change-success, .change-fail, .credit-success, .credit-fail, .create-success').hide()
+  $('.dropdown-menu').trigger('click')
+  $('#sign-up-form').hide()
+  $('#sign-in-form').show()
 }
 
 const signUpFailure = (error) => {
@@ -28,6 +31,7 @@ const signInSuccess = (data) => {
   $('.banner-in').fadeOut(6000)
   $('.banner-out, .banner-fail, .register-fail, .change-success, .change-fail, .register-success, .credit-success, .credit-fail, .create-success').hide()
   $('.saveButton, .cancelButton').hide()
+  $('.dropdown-menu').trigger('click')
 }
 
 const signInFailure = (error) => {
@@ -42,6 +46,7 @@ const changePasswordSuccess = (data) => {
   $('.change-success').fadeIn('slow')
   $('.change-success').fadeOut(6000)
   $('.banner-out, .banner-fail, .banner-in, .register-fail, .change-fail, .register-success, .credit-success, .credit-fail, .create-success').hide()
+  $('.dropdown-menu').trigger('click')
 }
 
 const changePasswordFailure = (error) => {
@@ -56,6 +61,7 @@ const signOutSuccess = () => {
   $('.banner-out').fadeIn('slow')
   $('.banner-out').fadeOut(6000)
   $('.banner-fail, .banner-in, .register-fail, .change-success, .change-fail, .register-success, .credit-success, .credit-fail, .create-success').hide()
+  $('.dropdown-menu').trigger('click')
 }
 
 const signOutFailure = (error) => {

@@ -27,6 +27,7 @@ const signInSuccess = (data) => {
   $('.parallax, .banner-in, .giant-container').fadeIn('slow')
   $('.banner-in').fadeOut(6000)
   $('.banner-out, .banner-fail, .register-fail, .change-success, .change-fail, .register-success, .credit-success, .credit-fail, .create-success').hide()
+  $('.saveButton, .cancelButton').hide()
 }
 
 const signInFailure = (error) => {

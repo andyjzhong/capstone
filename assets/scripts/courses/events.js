@@ -17,10 +17,9 @@ const onIndexCourses = function () {
       $('.cancelButton').on('click', onCancelCourse)
     })
     .catch(ui.actionFailure)
-  // $('.saveButton').hide()
-  // $('.cancelButton').hide()
-  const id = $($(this).siblings()[1])
-  console.log('This is: ', id)
+    .then(() => {
+      $('.saveButton, .cancelButton').hide()
+    })
 }
 
 const rerunIndex = function () {
@@ -34,6 +33,13 @@ const rerunIndex = function () {
       $('.cancelButton').on('click', onCancelCourse)
     })
     .catch(ui.actionFailure)
+    .then(() => {
+      $('.saveButton, .cancelButton').hide()
+    })
+  // $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[1]).hide()
+  // $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[1]).hide()
+  // $('.saveButton').on('click', onSaveCourse)
+  // $('.cancelButton').on('click', onCancelCourse)
 }
 
 const onDestroyCourse = function (event) {
@@ -68,16 +74,8 @@ const onEditCourse = function (event) {
   $($('tr[data-id=' + id + ']').children()[1]).attr('contenteditable', 'true')
   $($('tr[data-id=' + id + ']').children()[2]).attr('contenteditable', 'true')
   $($('tr[data-id=' + id + ']').children()[3]).attr('contenteditable', 'false')
-  // $($('tr[data-id=' + id + ']').children()[3])[0].innerHTML.validate({
-  //   rules: {
-  //     key: 'required integer'
-  //   }
-  // })
-  console.log('Value is: ', $($('tr[data-id=' + id + ']').children()[3])[0].innerHTML)
   $('tr[data-id=' + id + ']').css('border', '3px solid #4f81c5')
   $('tr[data-id=' + id + ']').css('background-color', '#FCF8E3')
-  // $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).hide()
-  // $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).hide()
   $('.editButton, .destroyButton, .saveButton, .cancelButton').hide()
   $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[1]).show()
   $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[1]).show()
@@ -104,10 +102,12 @@ const onSaveCourse = function (event) {
       'credits': strippedCredits
     }
   }
-  // console.log(data, id)
   api.updateCourse(data, id)
     .then(ui.updateCourseSuccess)
     .catch(ui.updateCourseFailure)
+    .then(() => {
+      $('.editButton, .destroyButton').show()
+    })
   $($('tr[data-id=' + id + ']').children()[0]).attr('contenteditable', 'false')
   $($('tr[data-id=' + id + ']').children()[1]).attr('contenteditable', 'false')
   $($('tr[data-id=' + id + ']').children()[2]).attr('contenteditable', 'false')
@@ -116,8 +116,10 @@ const onSaveCourse = function (event) {
   $('tr[data-id=' + id + ']').css('background-color', 'rgba(255,255,255,.8)')
   $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).css('display', 'visible')
   $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).show()
-  $($($($('tr[data-id=' + id + ']').children()[4])[1]).children()[0]).hide()
-  $($($($('tr[data-id=' + id + ']').children()[5])[1]).children()[0]).hide()
+  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[1]).hide()
+  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[1]).hide()
+  $('.saveButton').on('click', onSaveCourse)
+  $('.cancelButton').on('click', onCancelCourse)
 }
 
 // This function reverts all fields back to being uneditable.
@@ -139,10 +141,15 @@ const onCancelCourse = function (event) {
       $('.cancelButton').on('click', onCancelCourse)
     })
     .catch(ui.actionFailure)
+    .then(() => {
+      $('.saveButton, .cancelButton').hide()
+    })
   $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).show()
   $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).show()
   $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[1]).hide()
   $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[1]).hide()
+  $('.saveButton').on('click', onSaveCourse)
+  $('.cancelButton').on('click', onCancelCourse)
 }
 
 const hideAway = function () {

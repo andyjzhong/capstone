@@ -24,10 +24,13 @@ const indexCourseSuccess = function (data) {
     $('#handlebars-content').html(indexCoursesHtml)
     $('#no-courses').hide()
   }
+  $('.editButton').on('click', courseEvents.onEditCourse)
+  $('.destroyButton').on('click', courseEvents.onDestroyCourse)
 }
 
 const destroyCourseSuccess = function () {
   // console.log('Successfully destroyed Course.')
+  $('.credit-fail').hide()
 }
 
 const updateCourseSuccess = function () {
@@ -38,18 +41,19 @@ const updateCourseSuccess = function () {
 
 const updateCourseFailure = function () {
   $('.credit-fail').fadeIn()
-  $('.credit-fail').fadeOut(8000)
+  // $('.credit-fail').fadeOut(8000)
   $('.credit-success').hide()
-  api.indexCourses()
-    .then(indexCourseSuccess)
-    .then(() => {
-      $('.destroyButton').on('click', courseEvents.onDestroyCourse)
-      $('.editButton').on('click', courseEvents.onEditCourse)
-      $('.saveButton').on('click', courseEvents.onSaveCourse)
-      $('.cancelButton').on('click', courseEvents.onCancelCourse)
-    })
-    .catch(updateCourseFailure)
-  courseStore.id = null
+  courseEvents.rerunIndex()
+  // api.indexCourses()
+  //   .then(indexCourseSuccess)
+  //   .then(() => {
+      // $('.saveButton').on('click', courseEvents.onSaveCourse)
+  //     $('.cancelButton').on('click', courseEvents.onCancelCourse)
+  //     $('.saveButton, .cancelButton').hide()
+  //     $('.editButton').on('click', courseEvents.onEditCourse)
+  //     $('.destroyButton').on('click', courseEvents.onDestroyCourse)
+  //   })
+  //   .catch(updateCourseFailure)
 }
 
 module.exports = {

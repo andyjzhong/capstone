@@ -23,7 +23,7 @@ hr {
 #home-pic {
   height: 925px;
   margin: 0 auto;
-  background: url('../../assets/images/student.jpg') no-repeat center center fixed;
+  background: url('../../assets/images/campus.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -69,6 +69,11 @@ hr {
   top: 10;
   left: 0;
   width: 100%
+}
+
+.banner-in {
+  top: 0;
+  position: fixed;
 }
 
 .credit-banner {
@@ -160,6 +165,7 @@ h3 {
 .hbs-narrative {
   max-width: 80%;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 table {
@@ -168,8 +174,8 @@ table {
   font-size: 16px;
 }
 
-tr {
-  max-height: 20px;
+td {
+  line-height: 3px;
 }
 
 #largeCol {
@@ -235,7 +241,42 @@ td {
   padding-bottom: 10%;
 }
 
-// Start Carousel
-.carousel-inner {
-  height: 925px;
+h1 {
+  padding-top: 50px;
+  text-align: center;
+}
+
+h2 {
+  padding-top: 30px;
+  text-align: center;
+}
+
+h5 {
+  text-align: center;
+  font-size: 16px;
+}
+
+blockquote {
+  margin-top: 40px;
+}
+
+// Source: https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
+blockquote {
+  border-left: 10px solid #4b5320;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  content: open-quote;
+}
+blockquote:before {
+  color: #4b5320;
+  content: open-quote;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
 }

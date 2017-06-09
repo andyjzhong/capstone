@@ -6,8 +6,8 @@ const courseEvents = require('../courses/events.js')
 
 const signUpSuccess = (data) => {
   // console.log('signUpSuccess ran and data is ', data)
-  $('.register-success').fadeIn('slow')
-  $('.register-success').fadeOut(6000)
+  $('.register-success').fadeIn()
+  // $('.register-success').fadeOut(7000)
   $('.banner-out, .banner-fail, .banner-in, .register-fail, .change-success, .change-fail, .credit-success, .credit-fail, .create-success').hide()
   $('.dropdown-menu').trigger('click')
   $('#sign-up-form').hide()
@@ -32,6 +32,12 @@ const signInSuccess = (data) => {
   $('.banner-out, .banner-fail, .register-fail, .change-success, .change-fail, .register-success, .credit-success, .credit-fail, .create-success').hide()
   $('.saveButton, .cancelButton').hide()
   $('.dropdown-menu').trigger('click')
+  $('html,body').animate(
+    {
+      scrollTop: $('.section-2').offset().top
+    },
+    'slow'
+  )
 }
 
 const signInFailure = (error) => {

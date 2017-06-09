@@ -81,8 +81,8 @@ const onEditCourse = function (event) {
   $('tr[data-id=' + id + ']').css('border', '3px solid #4f81c5')
   $('tr[data-id=' + id + ']').css('background-color', '#FCF8E3')
   $('.editButton, .destroyButton, .saveButton, .cancelButton').hide()
-  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[1]).show()
-  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[1]).show()
+  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[1]).fadeIn('slow')
+  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[1]).fadeIn('slow')
   $('.saveButton').on('click', onSaveCourse)
   $('.cancelButton').on('click', onCancelCourse)
 }
@@ -110,7 +110,7 @@ const onSaveCourse = function (event) {
     .then(ui.updateCourseSuccess)
     .catch(ui.updateCourseFailure)
     .then(() => {
-      $('.editButton, .destroyButton').show()
+      $('.editButton, .destroyButton').fadeIn('slow')
       $('.saveButton, .cancelButton').off()
       courseStore.id = null
     })
@@ -120,8 +120,8 @@ const onSaveCourse = function (event) {
   $($('tr[data-id=' + id + ']').children()[3]).attr('contenteditable', 'false')
   $('tr[data-id=' + id + ']').css('border', 'none')
   $('tr[data-id=' + id + ']').css('background-color', 'rgba(255,255,255,.8)')
-  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).show()
-  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).show()
+  $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[0]).fadeIn('slow')
+  $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[0]).fadeIn('slow')
   $($($($('tr[data-id=' + id + ']').children()[4])[0]).children()[1]).hide()
   $($($($('tr[data-id=' + id + ']').children()[5])[0]).children()[1]).hide()
   $('.saveButton, .cancelButton').off()
@@ -148,6 +148,8 @@ const onCancelCourse = function (event) {
     .then(() => {
       $('.saveButton, .cancelButton').hide()
       $('.saveButton, .cancelButton').off()
+      $('.editButton').fadeIn('slow')
+      $('.destroyButton').fadeIn('slow')
       courseStore.id = null
     })
 }

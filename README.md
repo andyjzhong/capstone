@@ -11,8 +11,7 @@ Link to deployed App: https://andyjzhong.github.io/capstone/
 (Additional links to repos are provided in the Links section below.)
 
 ## ERD
-
-Link to ERD: http://imgur.com/a/il2L7
+![ERD](/ERD.JPG)
 
 ## General Approach
 
@@ -37,8 +36,7 @@ As a user, we would like to be able to:
 -   Delete any user-made course.
 
 ## Wireframes
-
-Link to Wireframe: http://imgur.com/a/zN2H8
+![Wireframe](/Wireframe.JPG)
 
 ## Links
 

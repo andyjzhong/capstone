@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>GradeTrackr</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+    <!-- AZ: Navbar Component -->
+    <nav class="navbar" role="navigation">
+      <div class="container-fluid nav-container">
+        <div class="navbar-header">
+          <div class="navbar-brand" href="#">Grade Trackr</div>
+          <!-- AZ: Button for Hamburger Dropdown -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div> <!-- AZ: End of navbar-header -->
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+            <!-- AZ: List of Auth Dropdown -->
+            <ul class="dropdown-menu">
+              <li>
+
+                <!-- AZ: Container for Sign In -->
+                <div class="row sign-in">
+                  <div class="col-md-12 text-center">
+                    <!-- AZ: Form for Sign In -->
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-in-form">
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                        <input type="email" name="credentials[email]" class="form-control" id="inputEmail" placeholder="Email address" required>
+                      </div> <!-- AZ: End Sign In: E-mail -->
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                        <input type="password" name="credentials[password]" class="form-control" id="inputPassword" placeholder="Password" required>
+                      </div> <!-- AZ: End Sign In: Password -->
+                      <div class="form-group">
+                        <button id="loginbtn" type="submit" class="btn btn-block">Login</button>
+                      </div> <!-- AZ: End Sign In: Submit -->
+                      <hr width="100%">
+                      <a href="#" class="linkSignUp"><b>Register an Account</b></a>
+                    </form> <!-- AZ: End Sign In Form -->
+                  </div>
+                </div>
+                <!-- AZ: End of Sign In Container -->
+
+                <!-- AZ: Container for Sign Up -->
+                <div class="row sign-up">
+                  <div class="col-md-12 text-center">
+                    <!-- AZ: Form for Sign Up -->
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-up-form">
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                        <input type="email" name="credentials[email]" class="form-control" id="inputEmail2" placeholder="Email address" required>
+                      </div> <!-- AZ: End Sign Up: E-mail -->
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                        <input type="password" name="credentials[password]" class="form-control" id="inputPassword2" placeholder="Password" required>
+                      </div> <!-- AZ: End Sign Up: Password -->
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Confirm Password</label>
+                        <input type="password" name="credentials[password_confirmation]" class="form-control" id="inputPassword2" placeholder="Confirm Password" required>
+                      </div> <!-- AZ: End Sign Up: Confirm Password -->
+                      <div class="form-group">
+                        <button id="registerbtn" type="submit" class="btn btn-block">Register</button>
+                      </div> <!-- AZ: End Sign Up: Submit -->
+                      <hr width="100%">
+                      <span class="have-account">Already Have an Account?</span><br><a href="#" class="linkSignIn"><b>Sign In</b></a>
+                    </form>
+                  </div>
+                </div>
+                <!-- AZ: End of Sign Up Container -->
+
+                <!-- AZ: Container for Change Password -->
+                <div class="row change-password">
+                  <div class="col-md-12">
+                    <!-- AZ: Form for Change Password -->
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="changepassword-form">
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">Old Password</label>
+                        <input type="password" name="passwords[old]" class="form-control" id="inputPassword3" placeholder="Old Password" required>
+                      </div> <!-- AZ: End Change Password: Old -->
+                      <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword2">New Password</label>
+                        <input type="password" name="passwords[new]" class="form-control" id="inputPassword3" placeholder="New Password" required>
+                      </div> <!-- AZ: End Change Password: New -->
+                      <div class="form-group">
+                        <button id="changepassbtn" type="submit" class="btn btn-block">Change Password</button>
+                      </div> <!-- AZ: End Change Password: Submit -->
+                    </form>
+                  </div>
+                </div>
+                <!-- AZ: End of Change Password Container -->
+
+                <!-- AZ: Container for Sign Out -->
+                <div class="row sign-out">
+                  <div class="col-md-12">
+                    <!-- AZ: Form for Sign Out -->
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-out">
+                      <hr width="100%">
+                      <button id="signoutbtn" type="submit" class="btn btn-block">Log Out</button>
+                    </form>
+                  </div>
+                </div>
+                <!-- AZ: End of Sign Out Container -->
+
+              </li>
+            </ul> <!-- AZ: End of Auth Dropdown Selection -->
+          </li>
+        </ul> <!-- AZ: End of Dropdown Container -->
+      </div> <!-- AZ: End of Nav Container -->
+    </nav>
+    <!-- AZ: End of Navbar Component -->
+
+    <!-- Start Alert -->
+    <div class="account-banner alert alert-success banner-in"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully logged in.</div>
+    <div class="account-banner alert alert-success banner-out"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have logged out.</div>
+    <div class="account-banner alert alert-danger banner-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The e-mail or password you have entered is invalid.</div>
+    <div class="account-banner alert alert-success register-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully created an account! Please sign in to manage courses.</div>
+    <div class="account-banner alert alert-danger register-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The e-mail and password you have entered is invalid.</div>
+    <div class="account-banner alert alert-success change-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Your password has successfully been changed.</div>
+    <div class="account-banner alert alert-danger change-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The password you have entered is invalid.</div>
+    <div class="credit-banner alert alert-success credit-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully updated your course.</div>
+    <div class="credit-banner alert alert-danger credit-fail"><strong>Error</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;The credit amount you have entered is invalid. Your changes were not saved. To continue, please change credits to a number.</div>
+    <div class="credit-banner alert alert-success create-success"><strong>Success!</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;You have successfully logged your course.</div>
+    <!-- End Alert -->
+
+    <div id="home-pic">
+    </div>
+
+      <div class="giant-container section-2">
+        <div class="paragraph">
+          <h1>GradeTrackr</h1>
+          <hr class="footer-line" width="70%">
+
+          <h5>GradeTrackr is a single-page application for students to log academic courses. The app takes a minimalistic approach for users to manage and keep track of courses taken and corresponding grades.</h5>
+
+          <br>
+
+          <h3>Stay Organized with GradeTrackr</h3>
+          <!-- <hr class="main-line" width="100%">
+          <h5>GradeTrackr makes it easy to display your courses and your grades to your family and friends in a simple and elegant way. Registration is free and quick! Log in today to save your courses and grades. Never forget which courses you’ve taken and the grades you received! Get the help you need with GradeTrackr!</h5>
+          <br> -->
+        </div>
+
+        <!-- Start of Course Creation Form -->
+        <div class="creation-container">
+          <h3>Log Your Courses Below</h3>
+          <br>
+          <form id="create-course-form">
+            <div class="form-group has-warning">
+              <label class="form-control-label" for="inputWarning1">Course Name</label>
+              <input type="text" class="form-control form-control-primary" id="inputWarning1" name="course[title]" placeholder="Course Title" required>
+            </div>
+            <div class="form-group has-warning">
+              <label class="form-control-label" for="inputWarning1">Semester</label>
+              <input type="text" class="form-control form-control-primary" id="inputWarning1" name="course[semester]" placeholder="Semester" required>
+            </div>
+            <div class="form-group has-warning">
+              <label class="form-control-label" for="inputWarning1">Grade</label>
+              <input type="text" class="form-control form-control-primary" id="inputWarning1" name="course[grade]" placeholder="Grade" required>
+            </div>
+            <div class="form-group has-warning">
+              <label class="form-control-label" for="inputWarning1">Credits</label>
+              <input type="number" class="form-control form-control-primary" id="inputWarning1" name="course[credits]" placeholder="Credits" required>
+              <small class="form-text text-muted">Please enter a numerical value.</small>
+            </div>
+            <button id="makebtn" type="submit" class="btn btn-block highlight">Create Course</button>
+          </form>
+        </div>
+        <br>
+        <!-- End of Course Creation Form -->
+
+        <hr id="main-line" width="90%">
+      </div> <!-- End Giant Container -->
+
+      <!-- Parallax -->
+      <section class="parallax">
+        <div class="parallax-inner">
+        </div>
+      </section>
+
+      <div class="giant-container">
+        <hr id="main-line" width="90%">
+        <!-- <button id="indexButton" class="btn btn-success form-control" type="click">Index Courses</button> -->
+
+        <!-- Handlebars to show all courses -->
+        <div id="handlebars-content"></div>
+        <div id="no-courses" class="alert alert-warning text-center"><strong>No Courses Listed</strong></div>
+        <br>
+      </div> <!-- End Giant Container -->
+
+      <!-- Start Footer -->
+      <div class="footer">
+        <div class="box col-xs-4">
+          <!-- <h4>Column 1</h4>
+          <hr class="footer-line" width="80%"> -->
+          <blockquote>
+            <p>"Success is a journey, not a destination. The doing is often more important than the outcome."</p>
+            <footer>Arthur Ashe</footer>
+          </blockquote>
+        </div>
+        <div class="box col-xs-4">
+          <!-- <h4>Column 2</h4>
+          <hr class="footer-line" width="80%"> -->
+          <blockquote>
+            <p>"Success isn't always about greatness. It's about consistency. Consistent hard work leads to success. Greatness will come."</p>
+            <footer>The Rock</footer>
+          </blockquote>
+        </div>
+        <div class="box col-xs-4">
+          <!-- <h4>Column 3</h4>
+          <hr class="footer-line" width="80%"> -->
+          <blockquote>
+            <p>"There are no secrets to success. It is the result of preparation, hard work, and learning from failure."</p>
+            <footer>Colin Powell</footer>
+          </blockquote>
+        </div>
+        <div class="box col-xs-12 text-center">
+          <h4>Contact Us</h4>
+          <hr class="footer-address-line" width="95%">
+          <p><strong>General Assembly Boston</strong> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 125 Summer Street 13th Floor &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Boston, MA 02110</p>
+          <hr class="footer-address-line" width="95%">
+          <p>© Andy Zhong</p>
+        </div>
+      </div>
+      <!-- End Footer -->
+
+    </body>
+</html>
